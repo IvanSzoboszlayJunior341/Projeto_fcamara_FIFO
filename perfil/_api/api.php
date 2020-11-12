@@ -89,7 +89,7 @@ if(isset($_POST['AtualizarPerfil'])){
 
 // Excluir perfil
 if(isset($_POST['ExcluirPerfil'])){
-    $idProduto = $_POST['ExcluirPerfil'];
+    $idPerfil = $_POST['ExcluirPerfil'];
     $res = $pdo-> prepare("DELETE FROM tb_usuario WHERE idusuario = :id");
     $res->bindValue(":id", $idPerfil);
     if ($res->execute()) {
