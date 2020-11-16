@@ -65,6 +65,13 @@ if(isset($_GET['idPerfil'])){
             <button type="submit" name="AtualizarPerfil" value="<?php echo $_SESSION['BuscarPerfil']['idusuario']?>" class="btn btn-primary">Atualizar Perfil</button>
             <button type="submit" name="ExcluirPerfil" value="<?php echo $_SESSION['BuscarPerfil']['idusuario']?>" class="btn btn-danger">Excluir Conta</button>
         </form>
+        
+        <!-- Form para inserir imagem -->
+        <form method="POST" action="../_api/proc_upload.php" enctype="multipart/form-data">
+            Imagem: <input name="arquivo" type="file">
+            <input name="id" type="text" value="<?php echo $_SESSION['BuscarPerfil']['idusuario']?>" hidden><br><br>
+            <input type="submit" value="Cadastrar">
+        </form>
 
     </div>
 
