@@ -1,5 +1,5 @@
 <?php include('../_api/conexao.php');
-include('../_api/api.php');
+include('../_api/funcao_editar_perfil.php');
 @session_start();
 ?>
 <!DOCTYPE html>

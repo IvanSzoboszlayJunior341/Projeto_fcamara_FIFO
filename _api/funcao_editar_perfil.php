@@ -67,7 +67,9 @@ if(isset($_POST['AtualizarPerfil'])){
     $email = $_POST['email_perfil'];
     $senha = $_POST['senha_perfil'];
     $foto = $_POST['foto_perfil'];
-    $idPerfil = $_POST['AtualizarPerfil'];
+    $idPerfil = $_SESSION['id'];
+    
+
     $res = $pdo->prepare("UPDATE tb_usuario SET nome = :nomePerf, apelido = :apelidoPerf, email = :emailPerf, senha = :senhaPerf, foto = :fotoPerf WHERE idusuario = :idPerfil");
     $res->bindValue(":nomePerf", $nome);
     $res->bindValue(":apelidoPerf", $apelido);
@@ -78,13 +80,32 @@ if(isset($_POST['AtualizarPerfil'])){
     if($res->execute()){
         $res = $pdo->query("SELECT * FROM tb_usuario WHERE idusuario = $idPerfil");
         if($res->execute()){
-            $_SESSION['BuscarPerfil']= $res->fetch(PDO::FETCH_ASSOC);
-            $_SESSION['UserMsg'] = 'Perfil atualizada com sucesso';
-            $_SESSION['opt'] = 'success';
-            $_SESSION['alerta'] = 'Sucesso!';
-            header(sprintf('location: %s', $_SERVER['HTTP_REFERER']));
+            /*
+            echo $_SESSION['AtualizarPerfil']= $res->fetch(PDO::FETCH_ASSOC);
+            echo $_SESSION['UserMsg'] = 'Perfil atualizada com sucesso';
+            echo $_SESSION['opt'] = 'success';
+            echo $_SESSION['alerta'] = 'Sucesso!';http://localhost/fcamera/perfil/
+            */
+
+            echo "         
+            <script type=\"text/javascript\">
+                alert(\"Atualizado com Sucesso.\");
+                window.location.href='../index_fila.php';
+            </script>                    ";	
+            //header(sprintf('location: %s', $_SERVER['HTTP_REFERER']));
         };
     }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // Excluir perfil

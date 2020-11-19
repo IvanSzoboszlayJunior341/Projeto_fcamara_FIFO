@@ -1,10 +1,10 @@
 <?php
 
 //dados do servidor local
-$banco = 'banco_fcamera';
+$banco = 'fcamera';
 $host = 'localhost';
 $usuario = 'root';
-$senha = '';
+$senha = 'morncatsDEEP#';
 
 try {
     $pdo = new PDO("mysql:dbname=$banco;host=$host", "$usuario", "$senha");
