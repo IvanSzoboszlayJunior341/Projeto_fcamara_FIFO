@@ -255,7 +255,7 @@ session_start();
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="_api/funcao_editar_perfil.php" method="post">
+                <form action="_api/atualiza_perfil.php" method="post" enctype="multipart/form-data">
 
                     <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold">EDITAR PERFIL</h4>
@@ -296,7 +296,7 @@ session_start();
 
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4">Foto</label>
-                                    <input type="file" name="foto_perfil" class="" placeholder="Foto" value="<?php echo $_SESSION['foto']; ?>">
+                                    <input type="file" name="arquivo" placeholder="Foto" >
                                 </div>
 
                             </div>
@@ -322,56 +322,7 @@ session_start();
         </div>
     </div>
 
-    <!--MODAL LOGIN-->
-
-    <div class="modal fade" id="modalCadastroForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form  action="_api/api.php" method="post">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">CADASTRO</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body mx-3">
-                        <div class="md-form mb-4">
-                            <label data-error="wrong" data-success="right" for="defaultForm-apelido">Como você gostaria
-                                de
-                                ser chamado?</label>
-                            <input name="apelido"  type="name" id="defaultForm-apelido" class="form-control validate">
-                        </div>
-
-                        <div class="md-form mb-4">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-                            <input name="email" type="email" id="defaultForm-email" class="form-control validate">
-                        </div>
-
-                        <div class="md-form mb-4">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
-                            <input name="senha" type="password" id="defaultForm-pass" class="form-control validate">
-                        </div>
-
-                        <div class="md-form mb-4">
-                            <label data-error="wrong" data-success="right" for="defaultForm-Confpass">Confirme a
-                                senha</label>
-                            <input name="senhaconf" type="password" id="defaultForm-Confpass" class="form-control validate">
-                        </div>
-                        <div>
-                            <input type="checkbox" id="termos" name="termos">
-                            <label for="termos">Concordo com os <a href="">termos de uso</a></label>
-                        </div>
-                    </div>
-
-
-                    <div class="modal-footer d-flex justify-content-center">
-                        <input type="submit" name="cadastro" class="button">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    
 
 
     <!-- SVG -->
