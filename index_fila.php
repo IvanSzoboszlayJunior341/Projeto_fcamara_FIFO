@@ -9,35 +9,67 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>FIFO - Fcamara</title>
-
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
     <?php if(isset($_GET['idPerfil'])){ $idclicado = $_GET['idPerfil'];}?>
 </head>
 
 <body>
+    <header class="header">
+        <div class="espacamento">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#">
+                            <div class="logo">
+                                <img src="img/LOGO_FIFO.png" alt="FIFO Logo">
+                            </div>
+                        </a>
+                        <div>
+                            <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+                        </div>
+                    </div>
 
-    <nav class="navbar navbar-dark default-color ">
-        <a href="index.html">
-            <div class="logo">
-                <img src="img/logo_temp.png" alt="FIFO Logo">
+                    <div class="col-md-6">
+                        <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
+                            
+                            <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR  PERFIL</a>
+                            
+                            <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">SAIR</a>
+                        
+                        </form> 
+                        <div class="imgusuario" >
+                            <img src="img/teste.png" alt="..." >
+                          
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-        </a>
-        <form class="form-inline my-2 my-lg-0 ml-auto">
-            <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL</a>
-            <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">SAIR</a>
-        </form>
-    </nav>
+        </div>
+
+
+    </header>
+
+
+
+
+
 
     <div class="container">
         <div class="col-md-12">
             <div>
                 <!--            TODO alterar imagem-->
-                <img src="img/blank.png" alt="FIFO" align="right">
+               
             </div>
             <h2 align="left">O SITE 123 DE JOGOS DA FCÂMARA</h2>
             <p align="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -248,7 +280,6 @@ session_start();
         <p>Copyright &copy; 2020 Fcamara
     </div>
 
-
     <!--MODAL EDITAR PERFIL-->
 
     <div class="modal fade" id="modal_editar_perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -304,6 +335,7 @@ session_start();
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" required>
+                           
                                     <label class="form-check-label" for="gridCheck">
                                         Concordo que esta mudança não terá volta
                                     </label>
@@ -428,18 +460,6 @@ session_start();
     <script>
         window.jQuery || document.write('<script src="jr/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>  
-    <?php if(isset($_SESSION['UserMsg'])) {?>
-    <script >
-    swal({
-    title: "<?php echo $_SESSION['alerta'];?>",
-    text: "<?php echo $_SESSION['UserMsg'];?>",
-    icon: "<?php echo $_SESSION['opt'];?>",
-    button: "ok!",
-    });
-    </script>
-
-    <?php } unset($_SESSION['UserMsg']); unset($_SESSION['opt']); unset($_SESSION['alerta']); unset($_SESSION['BuscarPerfil']); ?>
-
 
 </body>
 
