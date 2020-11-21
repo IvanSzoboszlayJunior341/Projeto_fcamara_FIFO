@@ -28,6 +28,7 @@ session_start();
             </div>
         </a>
         <form class="form-inline my-2 my-lg-0 ml-auto">
+            <a href="calendario.php" class="button" >Board Games</a>
             <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL</a>
             <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">SAIR</a>
         </form>
