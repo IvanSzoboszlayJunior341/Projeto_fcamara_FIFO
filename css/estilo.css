@@ -3,7 +3,6 @@
 	padding: 0px;
 }
 
-
 header{
     background: linear-gradient(180deg, rgba(254, 85, 23, 0.8) 31.25%, rgba(254, 102, 46, 0.4) 91.15%),
     linear-gradient(0deg, #FE662E, #FE662E);
@@ -11,32 +10,44 @@ header{
     height: 630px;
     left: 0px;
     top: 0px;
-    padding-top: 30px;
+
 }
 
-.header div H2{
-    padding-top: 160px;
-}
-.header a img{
-    width:242,74px;
-    height:223,58px;
-    top: 36px;
-    left: 90,18px;
-    padding-left: 90,18;
-}
-
-.espacamento{
-    margin-left: 5%;
-    margin-top: 0;  
+.imgusuario{
+    position: absolute;
+    width: 367px;
+    height: 386px;
+    left:0;
+    top: 200px;
+    padding-left: 150px;
+    padding-right: 100px;
 }
 
+
+.imgusuario123{
+    position: absolute;
+    width: 367px;
+    height: 386px;
+    left:0;
+    top: -90px;
+    padding-left: 150px;
+    padding-right: 100px;
+}
+.textoH2{
+    padding: 115px 0 18px 99px;
+}
+.heandernavaimg{        
+    margin: -200px 0 -50px 25px;  
+}
 .menu_form{
     color: #fff;
     text-decoration:none;
-    padding-top: 16px;
-    padding-left: 25%;  
-
+    padding: 0 0 262px 0;
+    padding-left: 25%; 
+    margin-top: 100px; 
 }
+
+
 .button{
     background-color: #6263AB;
     color: #fff;
@@ -63,22 +74,8 @@ header{
     border-radius: 4px;
 }
 
-
-
-
-
 H2{
     font-size: 48px;
     color: #fff;
     font-family:'Montserrat', sans-serif bold;
-}
-
-.imgusuario{
-    position: absolute;
-    width: 367px;
-    height: 386px;
-    left:0;
-    top: 200px;
-    padding-left: 150px;
-    padding-right: 100px;
 }

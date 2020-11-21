@@ -20,41 +20,90 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
     <?php if(isset($_GET['idPerfil'])){ $idclicado = $_GET['idPerfil'];}?>
+
+    <style>
+
+    .header1{
+        background: linear-gradient(180deg, rgba(254, 85, 23, 0.8) 31.25%, rgba(254, 102, 46, 0.4) 91.15%),
+        linear-gradient(0deg, #FE662E, #FE662E);
+        width: auto;
+        height: 630px;
+        left: 0px;
+        top: 0px;
+    
+    }
+    .imgusuario123{
+        position: absolute;
+        width: 367px;
+        height: 386px;
+        left:0;
+        top: -90px;
+        padding-left: 150px;
+        padding-right: 100px;
+    }
+    .textoH2{
+        padding: 115px 0 18px 99px;
+    }
+    .heandernavaimg{        
+        margin: -200px 0 -50px 25px;  
+    }
+    .menu_form123{
+        color: #fff;
+        text-decoration:none;
+        padding: 0 0 262px 0;
+        padding-left: 25%; 
+        margin-top: 100px; 
+    }
+
+
+</style>
 </head>
 
 <body>
-<header class="header">
-    <nav class="navbar navbar-dark default-color ">
-        <div class="heandernavaimg">
-            <a href="index.html">
-                <div class="logo">
-                    <img src="img/LOGO_COMPLETA.png" alt="FIFO Logo">
-                </div>
-            </a>
-        </div>    
+    <!-- Image and text -->
 
-        <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
-            <a href="" class="button" data-toggle="modal" data-target="#modalLoginForm">LOGIN</a>
-            <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">CRIE UMA CONTA</a>
-        </form>
-
-    </nav>
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="textoH2">
-                        <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+    <header class="header1">
+        <nav class="navbar navbar-dark default-color ">
+            <div class="heandernavaimg">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img/LOGO_COMPLETA.png" alt="FIFO Logo">
                     </div>
-                </div>
+                </a>
+            </div>    
 
-                <div class="col-md-6">
-                    <div class="imgusuario123" >
-                        <img src="img/teste.png" alt="..." >
+            <form class="form-inline my-2 my-lg-0 ml-auto menu_form123 ">
+                <a href="" class="button" data-toggle="modal" data-target="#modalLoginForm">LOGIN</a>
+                <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">CRIE UMA CONTA</a>
+            </form>
+
+        </nav>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="textoH2">
+                            <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="imgusuario123" >
+                            <img src="img/teste.png" alt="..." >
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </header>
+
+
+
+
+    </header>
+
+
+
+
+
 
     <div class="container">
         <div class="col-md-12">
