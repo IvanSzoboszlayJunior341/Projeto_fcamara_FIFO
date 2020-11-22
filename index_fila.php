@@ -15,178 +15,211 @@ session_start();
     <link rel="stylesheet" href="css/fontAwesome.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
     <?php if(isset($_GET['idPerfil'])){ $idclicado = $_GET['idPerfil'];}?>
 </head>
 
 <body>
-<header class="header">
-    <nav class="navbar navbar-dark default-color ">
-        <div class="heandernavaimg">
-            <a href="index.html">
-                <div class="logo">
-                    <img src="img/LOGO_COMPLETA.png" alt="FIFO Logo">
-                </div>
-            </a>
-        </div>    
-
-        <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
-            <a href="" class="button" data-toggle="modal" data-target="#modalLoginForm">LOGIN</a>
-            <a href="" class="button" data-toggle="modal" data-target="#modalCadastroForm">CRIE UMA CONTA</a>
-        </form>
-
-    </nav>
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="textoH2">
-                        <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+    <header class="header">
+        <nav class="navbar navbar-dark default-color ">
+            <div class="heander_nav_img">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="img/LOGO_COMPLETA.png" alt="FIFO Logo">
                     </div>
-                </div>
+                </a>
+            </div>    
 
-                <div class="col-md-6">
-                    <div class="imgusuario123" >
-                        <img src="img/teste.png" alt="..." >
+            <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
+                <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL </a>
+                <a href="" class="button" data-toggle="modal" data-target="#">SAIR</a>
+            </form>
+
+        </nav>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="textoH2">
+                            <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="header_img_usuario" >
+                            <img src="img/teste.png" alt="..." >
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 
     <div class="container">
         <div class="col-md-12">
-            <div>
-                <!--            TODO alterar imagem-->
-               
+            <div class="texto_fila">
+                <H4 align="left" class="cor_prin_02_texto">ENTRE NA FILA E COMECE A JOGAR!</H2>
+                <p align="left">A FCÂMARA OFERECE UMA VARIEDADE DE JOGOS PARA AJUDAR NA ROTINA <br>
+                                DE TRABALHO. ESCOLHA UMA FILA, ACOMPANHE-A EM TEMPO REAL, SAIBA <br>
+                                QUANDO CHEGAR SUA VEZ, E <span class="cor_prin_02_texto">DESESTREESSA!</span></p>
             </div>
-            <h2 align="left">O SITE 123 DE JOGOS DA FCÂMARA</h2>
-            <p align="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                non proident</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
         </div>
     </div>
 
+
     <section class="featured-places" id="blog">
+
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <h2>VEJA AS FILAS EM TEMPO REAL</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="img/ps4.jpg" alt="">
+            
+                <div class="row row-cols-2 ">
+                    <div class="card mb-3 " >
+                        <div class="row no-gutters">
+                            
+                            <div class="col-md-4 ">
+                                <img src="img/fila/fila_videogame1.png" class="card_img" alt="...">
+                            </div>
+                        
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <H4 class="card_titulo">VIDEOGAME 01</H4>
+                                    <h6 class="card_subtitulo">sala de descompressão</h6>
 
-                            <div class="date-content">
-                                <h6>4</h6>
-                            </div>
-                        </div>
-                        <div class="down-content">
-                            <h4>Videogame</h4>
-                            <span>Sala de descompressão</span>
-                            <div class="row">
-                                <div class="col-md-6 first-button">
-                                    <!--<div class="text-button">
-                                    <a href="#">Add to favorites</a>
-                                </div>-->
-                                </div>
-                                <div class="col-md-6">
-                                    <!--<div class="text-button">
-                                    <a href="#">Continue Reading</a>
-                                </div>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="img/ps4.jpg" alt="">
+                                    <div class="card_numero_fila">
+                                        <H1><span class="">4 </span></H1>
+                                        <div class="card_conteudo_fila">
+                                        <span>PESSOAS</span>  <br>      
+                                        <span >NA FILA</span><br>
+                                        </div>
+                                    </div>
 
-                            <div class="date-content">
-                                <h6>6</h6>
-                            </div>
-                        </div>
-                        <div class="down-content">
-                            <h4>Videogame</h4>
-                            <span>Escritório</span>
-                            <div class="row">
-                                <div class="col-md-6 first-button">
-                                    <!--<div class="text-button">
-                                    <a href="#">Add to favorites</a>
-                                </div>-->
-                                </div>
-                                <div class="col-md-6">
-                                    <!--<div class="text-button">
-                                    <a href="#">Continue Reading</a>
-                                </div>-->
+                                    <div class="card_button">
+                                        <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                    </div>
+
+                                    <div class="card_detalhe_icone">
+                                        <a href="#">
+                                            <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
+                                            
+                                            <div class="card_detalhe_texto">
+                                                <span>Ver mais detalhes</span>  <br>      
+                                            
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="img/flipp.jpg" alt="">
+                
 
-                            <div class="date-content">
-                                <h6>3</h6>
-                            </div>
+
+
+                <div class="card mb-3 " >
+                    <div class="row no-gutters">
+                        
+                        <div class="col-md-4 ">
+                            <img src="img/fila/tets.png" class="card_img" alt="...">
                         </div>
-                        <div class="down-content">
-                            <h4>Videogame</h4>
-                            <span>Fliperama</span>
-                            <div class="row">
-                                <div class="col-md-6 first-button">
-                                    <!--<div class="text-button">
-                                    <a href="#">Add to favorites</a>
-                                </div>-->
+                    
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <H4 class="card_titulo">VIDEOGAME 02</H4>
+                                <h6 class="card_subtitulo">escritório</h6>
+
+                                <div class="card_numero_fila">
+                                    <H1><span class="">4 </span></H1>
+                                    <div class="card_conteudo_fila">
+                                    <span>PESSOAS</span>  <br>      
+                                    <span >NA FILA</span><br>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <!--<div class="text-button">
-                                    <a href="#">Continue Reading</a>
-                                </div>-->
+
+                                <div class="card_button">
+                                    <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                </div>
+
+                                <div class="card_detalhe_icone">
+                                    <H1><span class=""> <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
+                                    
+                                    <div class="card_detalhe_texto">
+                                        <span>Ver mais detalhes</span>  <br>      
+                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="img/sinuca.jpg" alt="">
 
-                            <div class="date-content">
-                                <h6>2</h6>
+                <div class="card mb-3 " >
+                    <div class="row no-gutters">
+                        
+                        <div class="col-md-4 ">
+                            <img src="img/fila/fila_videogame1.png" class="card_img" alt="...">
+                        </div>
+                    
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <H4 class="card_titulo">VIDEOGAME 01</H4>
+                                <h6 class="card_subtitulo">sala de descompressão</h6>
+
+                                <div class="card_numero_fila">
+                                    <H1><span class="">4 </span></H1>
+                                    <div class="card_conteudo_fila">
+                                    <span>PESSOAS</span>  <br>      
+                                    <span >NA FILA</span><br>
+                                    </div>
+                                </div>
+
+                                <div class="card_button">
+                                    <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                </div>
+
+                                <div class="card_detalhe_icone">
+                                    <H1><span class=""> <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
+                                    
+                                    <div class="card_detalhe_texto">
+                                        <span>Ver mais detalhes</span>  <br>      
+                                    
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="down-content">
-                            <h4>Videogame</h4>
-                            <span>Mesa de jogos</span>
-                            <div class="row">
-                                <div class="col-md-6 first-button">
-                                    <!--<div class="text-button">
-                                    <a href="#">Add to favorites</a>
-                                </div>-->
+                    </div>
+                </div>
+
+                <div class="card mb-3 " >
+                    <div class="row no-gutters">
+                        
+                        <div class="col-md-4 ">
+                            <img src="img/fila/fila_videogame1.png" class="card_img" alt="...">
+                        </div>
+                    
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <H4 class="card_titulo">VIDEOGAME 01</H4>
+                                <h6 class="card_subtitulo">sala de descompressão</h6>
+
+                                <div class="card_numero_fila">
+                                    <H1><span class="">4 </span></H1>
+                                    <div class="card_conteudo_fila">
+                                    <span>PESSOAS</span>  <br>      
+                                    <span >NA FILA</span><br>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <!--<div class="text-button">
-                                    <a href="#">Continue Reading</a>
-                                </div>-->
+
+                                <div class="card_button">
+                                    <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                </div>
+
+                                <div class="card_detalhe_icone">
+                                    <H1><span class=""> <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
+                                    
+                                    <div class="card_detalhe_texto">
+                                        <span>Ver mais detalhes</span>  <br>      
+                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -195,23 +228,6 @@ session_start();
             </div>
         </div>
     </section>
-
-    <div class="container">
-        <div class="col-md-12">
-            <div>
-                <!--            TODO alterar imagem-->
-                <img class="imgHome" src="img/celular_blank.png" alt="FIFO" align="left">
-            </div>
-            <p align="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                non proident</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
-            <p align="left">-ncididunt ut labore et dolore magna aliqua</p>
-        </div>
-    </div>
 
     <footer>
         <div class="container">
