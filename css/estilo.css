@@ -231,3 +231,83 @@ footer{
 .modal_texto{
     margin: 10px 0 10px 0;
 }
+
+#baixo_fila{
+    background: #7474B4;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.titulo_fila{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #121225;
+}
+
+.sub_titulo_fila{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #121225;
+    margin-top: -10px;
+}
+
+.pessoas_fila{
+    display: flex;
+    padding: 10px;
+}
+
+.numero_fila{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    padding-top: 20px;
+    padding-left: 5px;
+    color: #121225;
+}
+
+.div_pessoas_fila{
+    display: inline;
+}
+
+.texto_pessoas_fila1{
+    position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 120px;
+    padding-top: 10px;
+    
+    color: #121225;
+}
+
+.texto_pessoas_fila2{
+    position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 120px;
+    padding-top: 30px;
+
+    color: #121225;
+}
+
+.img_fila{
+    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+    border-radius: 20px 20px 0px 0px; 
+    height: 180px;
+}
+
+.flip{    
+    height: 180px;
+    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+    border-radius: 20px 20px 0px 0px 
+}
