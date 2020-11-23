@@ -69,7 +69,6 @@ if(isset($_POST['AtualizarPerfil'])){
     $foto = $_POST['foto_perfil'];
     $idPerfil = $_SESSION['id'];
     
-
     $res = $pdo->prepare("UPDATE tb_usuario SET nome = :nomePerf, apelido = :apelidoPerf, email = :emailPerf, senha = :senhaPerf, foto = :fotoPerf WHERE idusuario = :idPerfil");
     $res->bindValue(":nomePerf", $nome);
     $res->bindValue(":apelidoPerf", $apelido);
@@ -80,13 +79,6 @@ if(isset($_POST['AtualizarPerfil'])){
     if($res->execute()){
         $res = $pdo->query("SELECT * FROM tb_usuario WHERE idusuario = $idPerfil");
         if($res->execute()){
-            /*
-            echo $_SESSION['AtualizarPerfil']= $res->fetch(PDO::FETCH_ASSOC);
-            echo $_SESSION['UserMsg'] = 'Perfil atualizada com sucesso';
-            echo $_SESSION['opt'] = 'success';
-            echo $_SESSION['alerta'] = 'Sucesso!';http://localhost/fcamera/perfil/
-            */
-
             echo "         
             <script type=\"text/javascript\">
                 alert(\"Atualizado com Sucesso.\");
@@ -95,16 +87,6 @@ if(isset($_POST['AtualizarPerfil'])){
             //header(sprintf('location: %s', $_SERVER['HTTP_REFERER']));
         };
     }
-
-
-
-
-
-
-
-
-
-
 
 }
 
