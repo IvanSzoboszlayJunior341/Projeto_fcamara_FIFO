@@ -80,11 +80,21 @@ H4{
 h6{
     font-family: 'Montserrat', sans-serif bold;
     font-style: normal;
-    
     font-size: 13px;
     line-height: 20px;
     color: #000;
 } 
+
+
+h5{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+}
 
 .texto_fila{
     margin: 100px 0 -80px -30px;
@@ -100,8 +110,15 @@ h6{
     background: #FE5517;
 }
 
+
+
+
+.espaco_card{
+    margin: 0 0 56px 30px;
+}
+
 .card{
-    width: 590.3px;
+    width: 580.3px;
     height: 255px;
     background: #A8A8D0;
     border-radius: 20px 20px 20px 20px;
@@ -110,12 +127,13 @@ h6{
     
     width: 238.34px;
     height: 274.89px;
-    left: 98.19px;
-    top: 898.16px;
+    border-radius: 25px 0 0 25px;
     margin: -1px 0 0 -5px;
+    max-width: 220px;
+    max-height: 255px;
+   
+
     
-
-
 }
 .card_titulo{
     margin: -15px 0 10px 19px;   
@@ -157,15 +175,10 @@ h6{
     text-decoration:none;
     border-radius: 4px;
     text-align: center; 
-    margin-right: 83.24px;
-    margin-left: 84px;
     height: 40.21px;
     width: 185.32px;
     left: 0px;
     top: 0px;
-    
-
-
 }
 .button_fila:hover{
     background-color: #B93200;
@@ -177,4 +190,44 @@ h6{
     top: 0px;
     border-radius: 4px;
     text-align: center; 
+}
+footer{
+    background-color: #121225;
+    height: 336,18px;
+}
+
+.footer_texto{
+    color:#fff;
+    font-size: 16px;
+    padding-top: 25px;
+}
+
+.footer_img{
+    margin: 0 0 0 250px;
+}
+
+.footer_icone{
+    margin: 35px 0 0 0;
+}
+.cormodal{
+    background: #36357e;
+    color: #fff;
+}
+.modal_tamanho_botao{
+    height: 48px;
+    width: 170px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+}
+.modal_tamanho_botao:hover{
+    height: 48px;
+    width: 170px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+}
+
+.modal_texto{
+    margin: 10px 0 10px 0;
 }
