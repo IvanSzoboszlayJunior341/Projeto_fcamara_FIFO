@@ -294,8 +294,11 @@ session_start();
     <div class="modal fade " id="modal_editar_perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content cormodal ">
-                <form action="_api/funcao_editar_perfil.php" method="post">
+            <div class="modal-content">
+                <form action="_api/atualiza_perfil.php" method="post" enctype="multipart/form-data">
+
+
+
 
                     <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold">EDITAR PERFIL</h4>
@@ -336,7 +339,7 @@ session_start();
 
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4">Foto</label>
-                                    <input type="file" name="foto_perfil" class="" placeholder="Foto" value="<?php echo $_SESSION['foto']; ?>">
+                                    <input type="file" name="arquivo" placeholder="Foto" >
                                 </div>
 
                             </div>
@@ -362,8 +365,7 @@ session_start();
             </div>
         </div>
     </div>
-
-    <!--MODAL SAIR DA FILA-->
+          <!--MODAL SAIR DA FILA-->
 
     <div class="modal fade" id="modal_da_sair_fila" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
@@ -392,8 +394,7 @@ session_start();
             </form>
         </div>
     </div>
-
-
+      
     <!-- SVG -->
 
     <div hidden>

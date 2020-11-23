@@ -255,7 +255,7 @@ session_start();
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="_api/api.php" method="post">
+                <form action="_api/login.php" method="post">
                     <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold">LOGIN</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -292,12 +292,12 @@ session_start();
         </div>
     </div>
 
-    <!--MODAL LOGIN-->
+    <!--MODAL CADASTRO-->
 
     <div class="modal fade" id="modalCadastroForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form  action="_api/api.php" method="post">
+            <form  action="_api/cadastro.php" method="post">
                 <div class="modal-content">
                     <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold">CADASTRO</h4>
