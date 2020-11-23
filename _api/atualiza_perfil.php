@@ -48,7 +48,7 @@ if(isset($_POST['AtualizarPerfil'])){
    
         if(array_search($extensao, $extensoes)=== false){		
             echo "
-                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera4/index_fila.php'>
+                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera/index_fila.php'>
                 <script type=\"text/javascript\">
                     alert(\"A imagem não foi cadastrada extesão inválida.\");
                 </script>
@@ -57,7 +57,7 @@ if(isset($_POST['AtualizarPerfil'])){
         //Faz a verificação do tamanho do arquivo --else
         if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
             echo "
-                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera4/index_fila.php'>
+                <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera/index_fila.php'>
                 <script type=\"text/javascript\">
                     alert(\"Arquivo muito grande.\");
                 </script>
@@ -80,7 +80,7 @@ if(isset($_POST['AtualizarPerfil'])){
                
             
                     echo "
-                    <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera4/index_fila.php'>
+                    <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera/index_fila.php'>
                     <script type=\"text/javascript\">
                         alert(\"Imagem cadastrada com Sucesso.\");
                     </script>
@@ -88,7 +88,7 @@ if(isset($_POST['AtualizarPerfil'])){
 
             }else{
                 //Upload não efetuado com sucesso, exibe a mensagem
-               echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera4/index_fila.php'>
+               echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Projeto_fcamera/index_fila.php'>
                     <script type=\"text/javascript\">
                         alert(\"Imagem não foi cadastrada com Sucesso.\");
                     </script>
