@@ -34,6 +34,7 @@ session_start();
             </div>    
 
             <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
+                <a href="calendario.php" class="button" >Board Games</a>
                 <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL </a>
                 <a href="" class="button" data-toggle="modal" data-target="#modal_da_sair_fila">SAIR</a>
             </form>
@@ -54,8 +55,6 @@ session_start();
                     </div>
                 </div>
             </div>
-    </header>
-
     <div class="container">
         <div class="col-md-12">
             <div class="texto_fila">
