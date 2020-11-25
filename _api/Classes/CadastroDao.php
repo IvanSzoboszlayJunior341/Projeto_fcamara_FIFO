@@ -3,7 +3,7 @@ namespace _api\Classes;
 class CadastroDao{
 
     public function create(Usuario $p){
-        $sql = 'INSERT INTO tb_usuario (nome, apelido, email, senha, foto) VALUES ( ?, ?, ?, ?, "perfil.jpg")';
+        $sql = 'INSERT INTO tb_usuario (nome, apelido, email, senha, foto) VALUES ( ?, ?, ?, ?, "perfil.png")';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
