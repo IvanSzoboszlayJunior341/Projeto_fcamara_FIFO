@@ -1,5 +1,81 @@
 <?php
 session_start();
+
+  if(isset($_SESSION['idusuario']))	//verifica se sessao foi setada
+  {
+
+  }else{															
+
+      header("location:index.php"); //se nao foi então manda para index.html
+  } 
+require __DIR__ . "/vendor/autoload.php";
+$user = new \_api\Classes\Usuario();
+$user->setId($_SESSION['idusuario']);
+$usuarioDao = new \_api\Classes\UsuarioDao();
+
+$usuarioDao->read($user);
+foreach($usuarioDao->read($user) as $usuario):
+    $foto = $usuario['foto'];
+    $nome = $usuario['nome'];
+    $email = $usuario['email']; 
+    $senha = $usuario['senha'];
+endforeach;
+
+$filaDao = new \_api\Classes\FilaDao();
+$fila_1 = new \_api\Classes\Fila();
+$fila_1->setEquipamento(1);
+$fila_1->setUsuario($_SESSION['idusuario']);
+$filaDao->read_dentro($fila_1);
+if($filaDao->read_dentro($fila_1) == True)
+{
+    $fila1 = True;
+}
+else
+{
+    $fila1 = false;
+}
+
+$fila_2 = new \_api\Classes\Fila();
+$fila_2->setEquipamento(2);
+$fila_2->setUsuario($_SESSION['idusuario']);
+$filaDao->read_dentro($fila_2);
+if($filaDao->read_dentro($fila_2) == True)
+{
+    $fila2 = True;
+}
+else
+{
+    $fila2 = false;
+}
+
+$fila_3 = new \_api\Classes\Fila();
+$fila_3->setEquipamento(3);
+$fila_3->setUsuario($_SESSION['idusuario']);
+$filaDao->read_dentro($fila_3);
+if($filaDao->read_dentro($fila_3) == True)
+{
+    $fila3 = True;
+}
+else
+{
+    $fila3 = false;
+}
+
+$fila_4 = new \_api\Classes\Fila();
+$fila_4->setEquipamento(4);
+$fila_4->setUsuario($_SESSION['idusuario']);
+$filaDao->read_dentro($fila_4);
+if($filaDao->read_dentro($fila_4) == True)
+{
+    $fila4 = True;
+}
+else
+{
+    $fila4 = false;
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +110,7 @@ session_start();
             </div>    
 
             <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
-                <a href="calendario.php" class="button" >Board Games</a>
+                <!--<a href="calendario.php" class="button" >Board Games</a>-->
                 <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL </a>
                 <a href="" class="button" data-toggle="modal" data-target="#modal_da_sair_fila">SAIR</a>
             </form>
@@ -44,13 +120,13 @@ session_start();
                 <div class="row">
                     <div class="col-md-6">
                         <div class="textoH2">
-                            <H2>OLÁ, MARCOS. <br>SEJA BEM VINDO!</H2>
+                            <H2>OLÁ, <?php echo $nome ?>. <br>SEJA BEM VINDO!</H2>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="header_img_usuario" >
-                            <img src="img/teste.png" alt="..." >
+                            <img src="img/<?php echo $foto ?>" alt="..." >
                         </div>
                     </div>
                 </div>
@@ -85,7 +161,9 @@ session_start();
                                     <h6 class="card_subtitulo">sala de descompressão</h6>
 
                                     <div class="card_numero_fila">
-                                        <H1><span class="">4 </span></H1>
+                                        <div id="fila1">
+
+                                        </div>
                                         <div class="card_conteudo_fila">
                                         <span>PESSOAS</span>  <br>      
                                         <span >NA FILA</span><br>
@@ -93,7 +171,20 @@ session_start();
                                     </div>
 
                                     <div class="card_button">
-                                        <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                        <?php 
+                                            if($fila1 == false || $fila1 == null){?>
+                                                <form action="_api/entrarfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="1" hidden>
+                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
+                                                </form>
+                                            <?php
+                                            }else{
+                                            ?>
+                                                <form action="_api/sairfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="1" hidden>
+                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
+                                                </form>
+                                        <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
@@ -124,16 +215,29 @@ session_start();
                                     <H4 class="card_titulo">VIDEOGAME 02</H4>
                                     <h6 class="card_subtitulo">escritório</h6>
 
-                                    <div class="card_numero_fila">
-                                        <H1><span class="">4 </span></H1>
-                                        <div class="card_conteudo_fila">
-                                        <span>PESSOAS</span>  <br>      
-                                        <span >NA FILA</span><br>
+                                    <div class="card_numero_fila" >
+                                        <H1 id="fila2"></H1>
+                                        <div class="card_conteudo_fila" >
+                                            <span>PESSOAS</span>  <br>      
+                                            <span >NA FILA</span><br>
                                         </div>
                                     </div>
 
                                     <div class="card_button">
-                                        <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                    <?php 
+                                            if($fila2 == false || $fila2 == null){?>
+                                                <form action="_api/entrarfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="2" hidden>
+                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
+                                                </form>
+                                            <?php
+                                            }else{
+                                            ?>
+                                                <form action="_api/sairfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="2" hidden>
+                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
+                                                </form>
+                                        <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
@@ -166,7 +270,9 @@ session_start();
                                     <h6 class="card_subtitulo">'</h6>
 
                                     <div class="card_numero_fila">
-                                        <H1><span class="">4 </span></H1>
+                                        <div id="fila3">
+                                            
+                                        </div>
                                         <div class="card_conteudo_fila">
                                         <span>PESSOAS</span>  <br>      
                                         <span >NA FILA</span><br>
@@ -174,7 +280,20 @@ session_start();
                                     </div>
 
                                     <div class="card_button">
-                                        <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                    <?php 
+                                            if($fila3 == false || $fila3 == null){?>
+                                                <form action="_api/entrarfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="3" hidden>
+                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
+                                                </form>
+                                            <?php
+                                            }else{
+                                            ?>
+                                                <form action="_api/sairfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="3" hidden>
+                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
+                                                </form>
+                                        <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
@@ -208,7 +327,9 @@ session_start();
                                     <h6 class="card_subtitulo">sinuca | ping pong</h6>
 
                                     <div class="card_numero_fila">
-                                        <H1><span class="">4 </span></H1>
+                                        <div  id="fila4">
+                                            
+                                        </div>
                                         <div class="card_conteudo_fila">
                                         <span>PESSOAS</span>  <br>      
                                         <span >NA FILA</span><br>
@@ -216,7 +337,20 @@ session_start();
                                     </div>
 
                                     <div class="card_button">
-                                        <button type="button" class="btn button_fila">ENTRA NA FILA</button>
+                                    <?php 
+                                            if($fila4 == false || $fila4 == null){?>
+                                                <form action="_api/entrarfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="4" hidden>
+                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
+                                                </form>
+                                            <?php
+                                            }else{
+                                            ?>
+                                                <form action="_api/sairfila.php" method="post">
+                                                    <input name="equipamento" type="text" value="4" hidden>
+                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
+                                                </form>
+                                        <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
@@ -294,7 +428,7 @@ session_start();
     <div class="modal fade " id="modal_editar_perfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content cormodal">
                 <form action="_api/atualiza_perfil.php" method="post" enctype="multipart/form-data">
 
 
@@ -309,12 +443,12 @@ session_start();
                     
                     <div class="modal-body mx-3">
 
-                        <form method="post" action="../_api/api.php">
+                        <form method="post" action="_api/atualiza_perfil.php" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                         
                                     <label data-error="wrong" data-success="right" for="defaultForm-email">Nome</label>
-                                    <input type="text" name="nome_perfil" class="form-control validate" placeholder="Nome" value="<?php echo $_SESSION['nome'] ; ?>">
+                                    <input type="text" name="nome_perfil" class="form-control validate" placeholder="Nome" value="<?php echo $nome ; ?>">
                                 
                                 </div>
                                 <!--
@@ -329,12 +463,12 @@ session_start();
 
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4">E-mail</label>
-                                    <input type="email" name="email_perfil" class="form-control" placeholder="E-mail" value="<?php echo $_SESSION['email']; ?>">
+                                    <input type="email" name="email_perfil" class="form-control" placeholder="E-mail" value="<?php echo $email; ?>">
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4">Senha</label>
-                                    <input type="text" name="senha_perfil" class="form-control" placeholder="Senha" value="<?php echo $_SESSION['senha'];?>">
+                                    <input name="senha_perfil" type="password" class="form-control" placeholder="Senha" value="<?php echo $senha;?>">
                                 </div>
 
                                 <div class="form-group col-md-12">
@@ -386,7 +520,7 @@ session_start();
                     <div class="modal-footer d-flex justify-content-center">
 
                         <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
-                        <button type="button" class="btn button_fila modal_tamanho_botao">SAIR DA FILA</button>
+                        <a href="_api/sair.php"><button type="button" class="btn button_fila modal_tamanho_botao">SAIR DA FILA</button></a>
 
 
                     </div>
@@ -449,6 +583,12 @@ session_start();
     <script>
         window.jQuery || document.write('<script src="jr/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>  
+    <script>
+        var intervalo1 = setInterval(function() { $('#fila1').load('_api/fila1.php'); }, 1000);
+        var intervalo2 = setInterval(function() { $('#fila2').load('_api/fila2.php'); }, 1000);
+        var intervalo3 = setInterval(function() { $('#fila3').load('_api/fila3.php'); }, 1000);
+        var intervalo4 = setInterval(function() { $('#fila4').load('_api/fila4.php'); }, 1000);
+    </script>
 
 </body>
 

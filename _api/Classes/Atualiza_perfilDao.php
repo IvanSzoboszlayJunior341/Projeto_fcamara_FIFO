@@ -4,15 +4,14 @@ Class Atualiza_perfilDao{
 
     public function update(Usuario $p){
 
-        $sql = 'UPDATE tb_usuario SET nome = ?, apelido = ?, email = ?, senha = ?, foto = ? WHERE idusuario = ?';
+        $sql = 'UPDATE tb_usuario SET nome = ?, email = ?, senha = ?, foto = ? WHERE idusuario = ?';
     
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
-        $stmt->bindValue(2, $p->getApelido());
-        $stmt->bindValue(3, $p->getEmail());
-        $stmt->bindValue(4, $p->getSenha());
-        $stmt->bindValue(5, $p->getImagem());
-        $stmt->bindValue(6, $p->getId());
+        $stmt->bindValue(2, $p->getEmail());
+        $stmt->bindValue(3, $p->getSenha());
+        $stmt->bindValue(4, $p->getImagem());
+        $stmt->bindValue(5, $p->getId());
     
         $stmt->execute();
     

@@ -1,14 +1,14 @@
 <?php
 namespace _api\Classes;
 
-Class LoginDao
+Class UsuarioDao
 {
     public function read(Usuario $p){
 
-        $sql = 'SELECT * From tb_usuario WHERE email = ?';
+        $sql = 'SELECT * From tb_usuario WHERE idusuario = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->bindValue(1, $p->getEmail());
+        $stmt->bindValue(1, $p->getId());
         $stmt->execute();
 
         if($stmt->rowCount() > 0):
