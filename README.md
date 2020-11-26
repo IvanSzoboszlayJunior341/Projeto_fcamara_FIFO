@@ -9,8 +9,9 @@ Mas por algo mais descontraído, não é muito organizado. Às vezes demora para
 Para melhorar a experiência de jogo e maior convivência com os consultores, tivemos a ideia para ser desenvolvido o **FIFO**, uma fila para organizar as jogatinas dentro do escritório, seja de sinuca, Fifa ou de qualquer outro jogo que temos para Playstation, e até mesmo board games.
 
 ## Links:
-- Protótipo:
-- Banco de dados:
+- Protótipo WEB
+- Protótipo Mobile
+- Banco de dados
 
 ## Colaboradores:
 
