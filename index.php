@@ -25,77 +25,160 @@ endif;
     <link rel="stylesheet" href="css/templatemo-style.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
+    
 </head>
 
 <body>
-<?php
-        
-        if($erro_login == "1" || $erro_login == "2")
-        {
-            if($erro_login == "1")
-            {
-                echo '  <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Erro!</strong> Usuário não encontrado!
-                        </div>';
-                        $_SESSION['erro_login'] = null;
-            }
-            else
-            {
-                echo '  <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                             <strong>Erro!</strong>  Usuário ou senha incorretos!
-                        </div>'; 
-                        $_SESSION['erro_login'] = null;
-            }
-        }
-        else
-        $_SESSION['erro_login'] = null;
+    <!--MODALS DE ERROS-->
+
+        <!--CADASTRO REALIZADO COM SUCESSO!-->
+        <div class="modal fade" id="ModalSucessoCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">CADASTRO REALIZADO COM SUCESSO!</p>    
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--EMAIL JA CADASTRADO-->
+        <div class="modal fade" id="ModalErroEmailCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">ESSE E-MAIL JÁ ESTA SENDO USADO! </p> 
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Senhas diferente-->
+        <div class="modal fade" id="ModalErroSenhaDiferentes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">SENHAS DIFERENTES!!! TENTE NOVAMENTE!</p> 
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Campos vazios cadastro-->
+        <div class="modal fade" id="ModalErroVazioCadastro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">EXISTEM CAMPOS VAZIOS POR FAVOR OS PREENCHA!</p> 
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- senha incorreta!-->
+
+        <div class="modal fade" id="ModalErroSenhaLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">USUÁRIO OU SENHA INCORRETOS!</p>   
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Email incorreto!-->
+
+        <div class="modal fade" id="ModalErroLoginEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content  cormodal ">
+                    <form action="_api/login.php" method="post">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body mx-3 erros_modal">
+                            <div class="md-form mb-5 erro_modal">
+                                <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                            </div>
+                            <div class="md-form mb-4 erro_modal msg_erros">
+                                <p class="msg_erro">USUÁRIO NÃO ENCONTRADO! TENTE NOVAMENTE!</p>   
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
         
-        if($erro_cad == "1" || $erro_cad == "2" || $erro_cad == "3" || $erro_cad == "4")
-        {
-            if($erro_cad == "1")
-            {
-                echo '  <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Erro!</strong> Preencha todos os campos!
-                        </div>';
-                        $_SESSION['erro_cad'] = null;
-            }
-            else if ($erro_cad == "2")
-            {
-                echo '  <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                             <strong>Erro!</strong> Senhas diferentes!
-                        </div>'; 
-                        $_SESSION['erro_cad'] = null;
-            }
-            else if ($erro_cad == "3")
-            {
-                echo '  <div class="alert alert-danger alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Erro!</strong>  Email já cadastrado!
-                        </div>'; 
-                        $_SESSION['erro_cad'] = null;
-            }
-            else if($erro_cad == "4")
-            {
-                echo '  <div class="alert alert-success alert-dismissible fade show">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <strong>Sucesso!</strong>  Usuário cadastrado com sucesso!
-                        </div>'; 
-                        $_SESSION['erro_cad'] = null;
-            }
-        }
-        else
-        {
-            $_SESSION['erro_cad'] = null;
-        }
 
 
-    ?>
 <header class="header">
         <nav class="navbar navbar-dark default-color ">
             <div class="heander_nav_img">
@@ -288,7 +371,7 @@ endif;
     <!--MODAL LOGIN-->
 
     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
+        >
         <div class="modal-dialog" role="document">
             <div class="modal-content cormodal">
                 <form action="_api/login.php" method="post">
@@ -429,6 +512,9 @@ endif;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
@@ -438,6 +524,105 @@ endif;
         var intervalo3 = setInterval(function() { $('#fila3').load('_api/fila3.php'); }, 1000);
         var intervalo4 = setInterval(function() { $('#fila4').load('_api/fila4.php'); }, 1000);
     </script>
+    <?php
+        
+    if($erro_login == "1" || $erro_login == "2")
+    {
+        if($erro_login == "1")
+        {
+                    ?>      
+                        <script>
+                            $(document).ready(function(){
+                                $('#ModalErroLoginEmail').modal('show');
+                            });
+                        </script>
+                    <?php 
+                    
+                    $_SESSION['erro_login'] = null;
+        }
+        else
+        {
+                     ?>      
+                        <script>
+                            $(document).ready(function(){
+                                $('#ModalErroSenhaLogin').modal('show');
+                            });
+                        </script>
+                    <?php 
+                    
+                    $_SESSION['erro_login'] = null;
+        }
+    }
+    else
+    $_SESSION['erro_login'] = null;
+
+    
+    if($erro_cad == "1" || $erro_cad == "2" || $erro_cad == "3" || $erro_cad == "4")
+    {
+        if($erro_cad == "1")
+        {
+                     ?>      
+                        <script>
+                            $(document).ready(function(){
+                                $('#ModalErroVazioCadastro').modal('show');
+                            });
+                        </script>
+                    <?php 
+                    
+                    $_SESSION['erro_cad'] = null;
+        }
+        else if ($erro_cad == "2")
+        {
+                    ?>      
+                    <script>
+                        $(document).ready(function(){
+                            $('#ModalErroSenhaDiferentes').modal('show');
+                        });
+                    </script>
+                    <?php 
+                    
+                    $_SESSION['erro_cad'] = null;
+        }
+        else if ($erro_cad == "3")
+        {
+             
+                ?>      
+                <script>
+                    $(document).ready(function(){
+                        $('#ModalErroEmailCadastro').modal('show');
+                    });
+                </script>
+                <?php
+                $_SESSION['erro_cad'] = null;
+        }
+        else if($erro_cad == "4")
+        {
+                ?>
+                <script>
+                    $(document).ready(function(){
+                        $('#ModalSucessoCadastro').modal('show');
+                    });
+                </script>
+                <?php
+                $_SESSION['erro_cad'] = null;
+        }
+    }
+    else
+    {
+        $_SESSION['erro_cad'] = null;
+    }
+
+
+?>
+    <?php
+    $situacao_usuario = "pendente";
+    if($situacao_usuario == "pendente"){ ?>
+        <script>
+            $(document).ready(function(){
+                $('#myModal').modal('show');
+            });
+        </script>
+    <?php } ?>
 
 
 </body>

@@ -311,3 +311,30 @@ footer{
     filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
     border-radius: 20px 20px 0px 0px 
 }
+
+.erros_modal{
+    display: flex;
+}
+
+.erro_modal{
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.erros_modal_img{
+    margin-top: 50%;
+}
+
+.msg_erros{
+    display:inline ;
+}
+
+.msg_erro{
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
