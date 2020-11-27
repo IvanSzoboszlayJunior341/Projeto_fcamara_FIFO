@@ -49,7 +49,17 @@ CREATE TABLE IF NOT EXISTS Fila (
   `Equipamento_idequipamento` INT NOT NULL,
   CONSTRAINT `fk_Fila_1_Usuario`FOREIGN KEY (`Usuario_idUsuario`) REFERENCES Usuario (`idUsuario`),
   CONSTRAINT `fk_Fila_Equipamento1` FOREIGN KEY (`Equipamento_idequipamento`) REFERENCES Equipamento (`idequipamento`));
-
+  
+-- -----------------------------------------------------
+-- Table events
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(220) DEFAULT NULL,
+  `color` varchar(10) DEFAULT NULL,
+  `start` datetime DEFAULT NULL,
+  `end` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 
 ## Colaboradores:
 
