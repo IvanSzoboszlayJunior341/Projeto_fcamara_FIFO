@@ -13,6 +13,44 @@ Para melhorar a experiência de jogo e maior convivência com os consultores, ti
 - Protótipo Mobile
 - Banco de dados
 
+create database banco_fcamara;
+
+use banco_fcamara;
+-- -----------------------------------------------------
+-- Table Usuario
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Usuario (
+  `idUsuario` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(45) NOT NULL,
+  `Senha` VARCHAR(255) NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Foto` VARCHAR(255) NULL,
+  PRIMARY KEY (`idUsuario`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table Equipamento
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Equipamento (
+  `idequipamento` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(45) NOT NULL,
+  `Local` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idequipamento`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table Fila
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Fila (
+  `idFila` INT NOT NULL PRIMARY KEY,
+  `Hora` TIME NOT NULL,
+  `Jogo` VARCHAR(45) NULL,
+  `Usuario_idUsuario` INT NOT NULL,
+  `Equipamento_idequipamento` INT NOT NULL,
+  CONSTRAINT `fk_Fila_1_Usuario`FOREIGN KEY (`Usuario_idUsuario`) REFERENCES Usuario (`idUsuario`),
+  CONSTRAINT `fk_Fila_Equipamento1` FOREIGN KEY (`Equipamento_idequipamento`) REFERENCES Equipamento (`idequipamento`));
+
+
 ## Colaboradores:
 
 **Devs:**
