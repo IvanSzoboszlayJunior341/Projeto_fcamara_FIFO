@@ -48,7 +48,8 @@ CREATE TABLE IF NOT EXISTS Fila (
   `Usuario_idUsuario` INT NOT NULL,
   `Equipamento_idequipamento` INT NOT NULL,
   CONSTRAINT `fk_Fila_1_Usuario`FOREIGN KEY (`Usuario_idUsuario`) REFERENCES Usuario (`idUsuario`),
-  CONSTRAINT `fk_Fila_Equipamento1` FOREIGN KEY (`Equipamento_idequipamento`) REFERENCES Equipamento (`idequipamento`));
+  CONSTRAINT `fk_Fila_Equipamento1` FOREIGN KEY (`Equipamento_idequipamento`) REFERENCES Equipamento (`idequipamento`))
+ ENGINE = InnoDB;
   
 -- -----------------------------------------------------
 -- Table events
@@ -59,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `color` varchar(10) DEFAULT NULL,
   `start` datetime DEFAULT NULL,
   `end` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`))
 
 ## Colaboradores:
 
