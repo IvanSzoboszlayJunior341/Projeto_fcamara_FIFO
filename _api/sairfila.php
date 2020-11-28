@@ -22,6 +22,7 @@ session_start();
         else
         {
             $_SESSION[$nomefila] = false;
+            $_SESSION[$nomefila."1"] = false;
             header("Location: ../index_fila.php");
         }
     

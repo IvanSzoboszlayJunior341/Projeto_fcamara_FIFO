@@ -8,8 +8,7 @@
         $fila->setEquipamento($_POST['equipamento']);
         $fila->setUsuario($_SESSION['idusuario']);
         $fila->setHora(date("H:i:s"));
-        $fila->setStatus('Ativo');
-
+        $fila->setJogo($_POST['jogo']);
         $nomefila = 'fila_'. $_POST['equipamento'];
 
         $filaDao = new \_api\Classes\FilaDao();
@@ -21,11 +20,13 @@
         if($filaDao->read_dentro($fila) == True)
         {
             $_SESSION[$nomefila] = True;
+            $_SESSION[$nomefila."1"] = True;
             header("Location: ../index_fila.php");
         }
         else
         {
             $_SESSION[$nomefila] = false;
+            $_SESSION[$nomefila1."1"] = false;
             header("Location: ../index_fila.php");
         }
     }

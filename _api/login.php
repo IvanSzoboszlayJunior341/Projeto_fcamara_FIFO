@@ -17,8 +17,8 @@ session_start();
     else
     {
         foreach($LoginDao->read($user) as $login):
-            $senha = $login['senha'];
-            $id = $login['idusuario'];
+            $senha = $login['Senha'];
+            $id = $login['idUsuario'];
             
         endforeach;
         if($senha == $psenha){

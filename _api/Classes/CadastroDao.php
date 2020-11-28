@@ -3,19 +3,18 @@ namespace _api\Classes;
 class CadastroDao{
 
     public function create(Usuario $p){
-        $sql = 'INSERT INTO tb_usuario (nome, apelido, email, senha, foto) VALUES ( ?, ?, ?, ?, "perfil.png")';
+        $sql = 'INSERT INTO usuario (idUsuario, Nome, Senha, Email, Foto) VALUES (Null, ?, ?, ?, "perfil.png")';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
-        $stmt->bindValue(2, $p->getApelido());
+        $stmt->bindValue(2, $p->getSenha());
         $stmt->bindValue(3, $p->getEmail());
-        $stmt->bindValue(4, $p->getSenha());
         $stmt->execute();
     }
 
     public function read(Usuario $p){
 
-        $sql = 'SELECT * From tb_usuario WHERE email = ?';
+        $sql = 'SELECT * From usuario WHERE Email = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getEmail());

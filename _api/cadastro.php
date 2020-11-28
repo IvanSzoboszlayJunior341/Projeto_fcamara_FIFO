@@ -6,12 +6,10 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) &
     $user = new \_api\Classes\Usuario();
     $usuario = $_POST['apelido'];
     $senha = $_POST['senha'];
-    $apelido = $_POST['apelido'];
     $senhaconf = $_POST['senhaconf'];
     $email = $_POST['email'];
     $user->setEmail($email);
-    $user->setNome($apelido);
-    $user->setApelido($apelido);
+    $user->setNome($usuario);
     $user->setSenha($senha);
    
 

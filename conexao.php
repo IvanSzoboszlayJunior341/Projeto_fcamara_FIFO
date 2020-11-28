@@ -3,7 +3,7 @@
 $hostname = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'banco_fcamera';
+$database = 'banco_fcamara';
  
 try {
     $conexao = new PDO("mysql:host=$hostname;dbname=$database", $username, $password,

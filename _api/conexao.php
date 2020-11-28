@@ -1,7 +1,7 @@
 <?php
 
 //dados do servidor local
-$banco = 'banco_fcamera';
+$banco = 'banco_fcamara';
 $host = 'localhost';
 $usuario = 'root';
 $senha = '';

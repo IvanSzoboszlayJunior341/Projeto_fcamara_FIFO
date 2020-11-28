@@ -1,6 +1,63 @@
 <?php
 session_start();
 
+if(isset($_SESSION['fila_11'])){
+
+    if($_SESSION['fila_11'] == TRUE)
+    {
+        $fila11 = 1;
+        $_SESSION['fila_11'] = null;
+    }else
+    {
+        $fila11 = 2;
+        $_SESSION['fila_11'] = null;
+    }
+
+}elseif(isset($_SESSION['fila_21'])){
+    
+    if($_SESSION['fila_21'] == TRUE)
+    {
+        $fila11 = 1;
+        $_SESSION['fila_21'] = null;
+    }else
+    {
+        $fila11 = 2;
+        $_SESSION['fila_21'] = null;
+    }
+
+}elseif(isset($_SESSION['fila_31'])){
+
+    if($_SESSION['fila_31'] == TRUE)
+    {
+        $fila11 = 1;
+        $_SESSION['fila_31'] = null;
+    }else
+    {
+        $fila11 = 2;
+        $_SESSION['fila_31'] = null;
+    }
+
+}elseif(isset($_SESSION['fila_41'])){
+
+    if($_SESSION['fila_41'] == TRUE)
+    {
+        $fila11 = 1;
+        $_SESSION['fila_41'] = null;
+    }else
+    {
+        $fila11 = 2;
+        $_SESSION['fila_41'] = null;
+    }
+
+}else{
+    $fila11 = 0;
+}
+
+
+
+
+
+
   if(isset($_SESSION['idusuario']))	//verifica se sessao foi setada
   {
 
@@ -15,10 +72,10 @@ $usuarioDao = new \_api\Classes\UsuarioDao();
 
 $usuarioDao->read($user);
 foreach($usuarioDao->read($user) as $usuario):
-    $foto = $usuario['foto'];
-    $nome = $usuario['nome'];
-    $email = $usuario['email']; 
-    $senha = $usuario['senha'];
+    $foto = $usuario['Foto'];
+    $nome = $usuario['Nome'];
+    $email = $usuario['Email']; 
+    $senha = $usuario['Senha'];
 endforeach;
 
 $filaDao = new \_api\Classes\FilaDao();
@@ -76,6 +133,8 @@ else
 
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +171,7 @@ else
             <form class="form-inline my-2 my-lg-0 ml-auto menu_form">
                 <!--<a href="calendario.php" class="button" >Board Games</a>-->
                 <a href="" class="button" data-toggle="modal" data-target="#modal_editar_perfil">EDITAR PERFIL </a>
-                <a href="" class="button" data-toggle="modal" data-target="#modal_da_sair_fila">SAIR</a>
+                <a href="" class="button" data-toggle="modal" data-target="#modal_sair">SAIR</a>
             </form>
 
         </nav>
@@ -170,25 +229,14 @@ else
                                         </div>
                                     </div>
 
-                                    <div class="card_button">
-                                        <?php 
-                                            if($fila1 == false || $fila1 == null){?>
-                                                <form action="_api/entrarfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="1" hidden>
-                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
-                                                </form>
-                                            <?php
-                                            }else{
-                                            ?>
-                                                <form action="_api/sairfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="1" hidden>
-                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
-                                                </form>
-                                        <?php } ?>
+
+                                <?php if($fila1 == false || $fila1 == null){?>
+                                    <div class="card_button">    
+                                        <button class="btn button_fila" data-toggle="modal" data-target="#modal_entrar_fila1">ENTRAR NA FILA</button>
                                     </div>
 
                                     <div class="card_detalhe_icone">
-                                        <a href="#">
+                                        <a href="#pessoalfila1" data-toggle="modal" data-target="#pessoalfila1">
                                             <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
                                             
                                             <div class="card_detalhe_texto">
@@ -197,6 +245,26 @@ else
                                             </div>
                                         </a>
                                     </div>
+
+                                <?php }else{ ?>
+
+                                    <div class="card_button">   
+                                        <button class="btn button_fila" data-toggle="modal" data-target="#modal_sair_fila1">SAIR DA FILA</button>
+                                    </div>
+
+                                    <div class="card_detalhe_icone">
+                                        <a href="#pessoalfiladentro1" data-toggle="modal" data-target="#pessoalfiladentro1">
+                                            <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
+                                            
+                                            <div class="card_detalhe_texto">
+                                                <span>Ver mais detalhes</span>  <br>      
+                                            
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php } ?>    
+
+
                                 </div>
                             </div>
                         </div>
@@ -224,24 +292,18 @@ else
                                     </div>
 
                                     <div class="card_button">
-                                    <?php 
-                                            if($fila2 == false || $fila2 == null){?>
-                                                <form action="_api/entrarfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="2" hidden>
-                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
-                                                </form>
+                                        <?php 
+                                            if($fila2 == false || $fila2 == null){?>    
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_entrar_fila2">ENTRAR NA FILA</button>
                                             <?php
                                             }else{
                                             ?>
-                                                <form action="_api/sairfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="2" hidden>
-                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
-                                                </form>
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_sair_fila2">SAIR DA FILA</button>   
                                         <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
-                                        <a href="#">
+                                        <a href="#pessoalfiladentro2" data-toggle="modal" data-target="#pessoalfiladentro2">
                                             <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
                                             
                                             <div class="card_detalhe_texto">
@@ -280,24 +342,18 @@ else
                                     </div>
 
                                     <div class="card_button">
-                                    <?php 
-                                            if($fila3 == false || $fila3 == null){?>
-                                                <form action="_api/entrarfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="3" hidden>
-                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
-                                                </form>
+                                        <?php 
+                                            if($fila3 == false || $fila3 == null){?>    
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_entrar_fila3">ENTRAR NA FILA</button>
                                             <?php
                                             }else{
                                             ?>
-                                                <form action="_api/sairfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="3" hidden>
-                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
-                                                </form>
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_sair_fila3">SAIR DA FILA</button>   
                                         <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
-                                        <a href="#">
+                                        <a href="#pessoalfila3" data-toggle="modal" data-target="#pessoalfila3">
                                             <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
                                             
                                             <div class="card_detalhe_texto">
@@ -337,24 +393,18 @@ else
                                     </div>
 
                                     <div class="card_button">
-                                    <?php 
-                                            if($fila4 == false || $fila4 == null){?>
-                                                <form action="_api/entrarfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="4" hidden>
-                                                    <input type="submit" value="ENTRAR NA FILA" class="btn button_fila">
-                                                </form>
+                                        <?php 
+                                            if($fila4 == false || $fila4 == null){?>    
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_entrar_fila4">ENTRAR NA FILA</button>
                                             <?php
                                             }else{
                                             ?>
-                                                <form action="_api/sairfila.php" method="post">
-                                                    <input name="equipamento" type="text" value="4" hidden>
-                                                    <input type="submit" value="SAIR DA FILA" class="btn button_fila">
-                                                </form>
+                                                <button class="btn button_fila" data-toggle="modal" data-target="#modal_sair_fila4">SAIR DA FILA</button>   
                                         <?php } ?>
                                     </div>
 
                                     <div class="card_detalhe_icone">
-                                        <a href="#">
+                                        <a href="#pessoalfila4" data-toggle="modal" data-target="#pessoalfila4">
                                             <H1><span class="">  <img src="img/icones/eye-4x.png" width="20" height="20" alt="Icone olho" > </span></H1>
                                             
                                             <div class="card_detalhe_texto">
@@ -499,12 +549,186 @@ else
             </div>
         </div>
     </div>
-          <!--MODAL SAIR DA FILA-->
 
-    <div class="modal fade" id="modal_da_sair_fila" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <!--MODAL SAIR-->
+
+    <div class="modal fade" id="modal_sair" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form  action="_api/api.php" method="post">
+                <div class="modal-content cormodal">
+                    <div class="modal-header text-center ">
+                        <h5 class="modal-title w-100 font-weight-bold modal_texto">Você tem certeza que deseja sair?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 ">
+                        
+                        <label data-error="wrong" data-success="right" for="defaultForm-apelido">Você tera que entrar novamente na aplicação para fazer novas alteraçôes.</label>
+                        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+
+                        <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
+                        <a href="_api/sair.php"><button type="button" class="btn button_fila modal_tamanho_botao">SAIR</button></a>
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!--Modal entrar fila-->
+
+    <!--FILA1-->
+    <div class="modal fade" id="modal_entrar_fila1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content cormodal">
+                <form action="_api/entrarfila.php" method="post">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">FILA VIDEOGAME 01</h4>
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-4 numeros_modal">
+                            <div id="filamodal1" >
+
+                            </div>
+                            <p>SUA POSIÇÃO SERÁ</p>
+                        </div>
+                        <div class="md-form mb-5">
+                            <input name="equipamento" type="text" value="1" hidden>
+                            <label for="inputState">QUAL JOGO VOCÊ VAI JOGAR? (OPCIONAL)</label>
+                            <input name="jogo" type="text" class="form-control" placeholder="FIFA">
+                        </div>
+                        <div class="btnForm ">
+                            <input type="submit" name="Enviar" class="button_fila">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--FILA2-->
+    <div class="modal fade" id="modal_entrar_fila2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content cormodal">
+                <form action="_api/entrarfila.php" method="post">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">FILA VIDEOGAME 01</h4>
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-4 numeros_modal">
+                            <div id="filamodal2" >
+
+                            </div>
+                            <p>SUA POSIÇÃO SERÁ</p>
+                        </div>
+                        <div class="md-form mb-5">
+                            <input name="equipamento" type="text" value="2" hidden>
+                            <label for="inputState">QUAL JOGO VOCÊ VAI JOGAR? (OPCIONAL)</label>
+                            <input name="jogo" type="text" class="form-control" placeholder="FIFA">
+                        </div>
+                        <div class="btnForm ">
+                            <input type="submit" name="Enviar" class="button_fila">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--FILA3-->
+    <div class="modal fade" id="modal_entrar_fila3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content cormodal">
+                <form action="_api/entrarfila.php" method="post">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">FILA VIDEOGAME 01</h4>
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-4 numeros_modal">
+                            <div id="filamodal3" >
+
+                            </div>
+                            <p>SUA POSIÇÃO SERÁ</p>
+                        </div>
+                        <div class="md-form mb-5">
+                            <input name="equipamento" type="text" value="3" hidden>
+                            <label for="inputState">QUAL JOGO VOCÊ VAI JOGAR? (OPCIONAL)</label>
+                            <input name="jogo" type="text" class="form-control" placeholder="FIFA">
+                        </div>
+                        <div class="btnForm ">
+                            <input type="submit" name="Enviar" class="button_fila">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--FILA4-->
+    <div class="modal fade" id="modal_entrar_fila4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content cormodal">
+                <form action="_api/entrarfila.php" method="post">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">FILA VIDEOGAME 01</h4>
+                        
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-4 numeros_modal">
+                            <div id="filamodal4" >
+
+                            </div>
+                            <p>SUA POSIÇÃO SERÁ</p>
+                        </div>
+                        <div class="md-form mb-5">
+                            <input name="equipamento" type="text" value="4" hidden>
+                            <label for="inputState">QUAL JOGO VOCÊ VAI JOGAR? (OPCIONAL)</label>
+                            <input name="jogo" type="text" class="form-control" placeholder="FIFA">
+                        </div>
+                        <div class="btnForm ">
+                            <input type="submit" name="Enviar" class="button_fila">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal sair fila-->
+
+    <!--Fila 1-->
+    <div class="modal fade" id="modal_sair_fila1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <form  action="_api/sairfila.php" method="post">
                 <div class="modal-content cormodal">
                     <div class="modal-header text-center ">
                         <h5 class="modal-title w-100 font-weight-bold modal_texto">Você tem certeza que deseja sair?</h5>
@@ -518,16 +742,350 @@ else
                         
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-
+                        <input name="equipamento" type="text" value="1" hidden>
                         <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
-                        <a href="_api/sair.php"><button type="button" class="btn button_fila modal_tamanho_botao">SAIR DA FILA</button></a>
-
-
+                        <input type="submit" value="SAIR DA FILA" class="btn button_fila modal_tamanho_botao" >
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <!--Fila 2-->
+    <div class="modal fade" id="modal_sair_fila2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <form  action="_api/sairfila.php" method="post">
+                <div class="modal-content cormodal">
+                    <div class="modal-header text-center ">
+                        <h5 class="modal-title w-100 font-weight-bold modal_texto">Você tem certeza que deseja sair?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 ">
+                        
+                        <label data-error="wrong" data-success="right" for="defaultForm-apelido">Essa ação não poderá ser desfeita. Caso você deseje retornar irá para o final da fila.</label>
+                        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <input name="equipamento" type="text" value="2" hidden>
+                        <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
+                        <input type="submit" value="SAIR DA FILA" class="btn button_fila modal_tamanho_botao" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Fila 3-->
+    <div class="modal fade" id="modal_sair_fila3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <form  action="_api/sairfila.php" method="post">
+                <div class="modal-content cormodal">
+                    <div class="modal-header text-center ">
+                        <h5 class="modal-title w-100 font-weight-bold modal_texto">Você tem certeza que deseja sair?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 ">
+                        
+                        <label data-error="wrong" data-success="right" for="defaultForm-apelido">Essa ação não poderá ser desfeita. Caso você deseje retornar irá para o final da fila.</label>
+                        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <input name="equipamento" type="text" value="3" hidden>
+                        <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
+                        <input type="submit" value="SAIR DA FILA" class="btn button_fila modal_tamanho_botao" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Fila 4-->
+    <div class="modal fade" id="modal_sair_fila4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        >
+        <div class="modal-dialog" role="document">
+            <form  action="_api/sairfila.php" method="post">
+                <div class="modal-content cormodal">
+                    <div class="modal-header text-center ">
+                        <h5 class="modal-title w-100 font-weight-bold modal_texto">Você tem certeza que deseja sair?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 ">
+                        
+                        <label data-error="wrong" data-success="right" for="defaultForm-apelido">Essa ação não poderá ser desfeita. Caso você deseje retornar irá para o final da fila.</label>
+                        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <input name="equipamento" type="text" value="4" hidden>
+                        <button type="button" class="btn  button_fila modal_tamanho_botao" data-dismiss="modal">CANCELAR</button>
+                        <input type="submit" value="SAIR DA FILA" class="btn button_fila modal_tamanho_botao" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--ENTROU-->
+
+    <div class="modal fade" id="ModalEntrouFila" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content  cormodal ">
+                <form action="_api/login.php" method="post">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 erros_modal">
+                        <div class="md-form mb-5 erro_modal">
+                            <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                        </div>
+                        <div class="md-form mb-4 erro_modal msg_erros">
+                            <p class="msg_erro">VOCÊ ENTROU NA FILA </p>   
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--SAIU-->
+    <div class="modal fade" id="ModalSaiuFila" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content  cormodal ">
+                <form action="_api/login.php" method="post">
+                    <div class="modal-header text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3 erros_modal">
+                        <div class="md-form mb-5 erro_modal">
+                            <img class="erros_modal_img" src="img/Vector.png" alt="">  
+                        </div>
+                        <div class="md-form mb-4 erro_modal msg_erros">
+                            <p class="msg_erro">VOCÊ SAIU DA FILA </p>   
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Lista Fila -->
+
+    <!--FILA1-->
+    <div class="modal" id="pessoalfila1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Heading</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila1">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+      <!--FILA 2-->
+    <div class="modal" id="pessoalfila2">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Heading</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila2">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+      <!--FILA 3-->
+    <div class="modal" id="pessoalfila3">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Heading</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila3">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+      <!--FILA 4-->
+    <div class="modal" id="pessoalfila4">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Heading</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila4">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+
+      <!--FILA DENTRO 1-->
+    <div class="modal" id="pessoalfiladentro1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Headingaaa</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila_dentro1">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+      <!--FILA DENTRO 2-->
+    <div class="modal" id="pessoalfiladentro2">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Headingaaa</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila_dentro2">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+      <!--FILA DENTRO 3-->
+    <div class="modal" id="pessoalfiladentro3">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Headingaaa</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila_dentro3">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+      <!--FILA DENTRO 4-->
+    <div class="modal" id="pessoalfiladentro4">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content cormodal">
+          
+            
+            <div class="modal-header">
+              <h1 class="modal-title">Modal Headingaaa</h1>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body" id="pessoal_fila_dentro4">
+                
+            </div>
+            
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+    
+
+        
       
     <!-- SVG -->
 
@@ -575,21 +1133,49 @@ else
         </svg>
     </div>
 
+    
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="jr/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>  
     <script>
-        var intervalo1 = setInterval(function() { $('#fila1').load('_api/fila1.php'); }, 1000);
-        var intervalo2 = setInterval(function() { $('#fila2').load('_api/fila2.php'); }, 1000);
-        var intervalo3 = setInterval(function() { $('#fila3').load('_api/fila3.php'); }, 1000);
-        var intervalo4 = setInterval(function() { $('#fila4').load('_api/fila4.php'); }, 1000);
+        var fila = setInterval(function() { $('#fila1').load('_api/fila1.php'); }, 1000);
+        var fila2 = setInterval(function() { $('#fila2').load('_api/fila2.php'); }, 1000);
+        var fila3 = setInterval(function() { $('#fila3').load('_api/fila3.php'); }, 1000);
+        var fila4 = setInterval(function() { $('#fila4').load('_api/fila4.php'); }, 1000);
+        var filamodal1 = setInterval(function() { $('#filamodal1').load('_api/fila1Entra.php'); }, 1000);
+        var filamodal2 = setInterval(function() { $('#filamodal2').load('_api/fila2Entra.php'); }, 1000);
+        var filamodal3 = setInterval(function() { $('#filamodal3').load('_api/fila3Entra.php'); }, 1000);
+        var filamodal4 = setInterval(function() { $('#filamodal4').load('_api/fila4Entra.php'); }, 1000);
+        var lista1 = setInterval(function() { $('#pessoal_fila1').load('_api/lista1.php'); }, 1000);
+        var lista2 = setInterval(function() { $('#pessoal_fila2').load('_api/lista2.php'); }, 1000); 
+        var lista3 = setInterval(function() { $('#pessoal_fila3').load('_api/lista3.php'); }, 1000); 
+        var lista4 = setInterval(function() { $('#pessoal_fila4').load('_api/lista4.php'); }, 1000);
+        var listadentro1 = setInterval(function() { $('#pessoal_fila_dentro1').load('_api/listadentro1.php'); }, 1000);
+        var listadentro2 = setInterval(function() { $('#pessoal_fila_dentro2').load('_api/listadentro2.php'); }, 1000); 
+        var listadentro3 = setInterval(function() { $('#pessoal_fila_dentro3').load('_api/listadentro3.php'); }, 1000); 
+        var listadentro4 = setInterval(function() { $('#pessoal_fila_dentro4').load('_api/listadentro4.php'); }, 1000); 
     </script>
-
+    <?php
+    if($fila11 == 1): ?>
+        <script>
+            $(document).ready(function(){
+                $('#ModalEntrouFila').modal('show');
+            });
+        </script>
+    <?php elseif($fila11 == 2): ?>
+        <script>
+            $(document).ready(function(){
+                $('#ModalSaiuFila').modal('show');
+            });
+        </script>
+    <?php endif; ?>
 </body>
 
 </html>

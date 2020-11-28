@@ -27,14 +27,6 @@ class Usuario{
         $this->senha = $senha;
     }
 
-    public function getApelido(){
-        return $this->apelido;
-    }
-
-    public function setApelido($apelido){
-        $this->apelido = $apelido;
-    }
-
     public function getNome(){
         return $this->nome;
     }

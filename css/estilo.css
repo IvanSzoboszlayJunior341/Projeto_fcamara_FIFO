@@ -338,3 +338,99 @@ footer{
     line-height: 29px;
     color: #FFFFFF;
 }
+
+.numeros_modal{
+    display: inline;
+}
+
+
+
+.usuario_chat-flex #ntf-usuario{ 
+    margin-left: 10px;
+    /* margin-right: 20px; */
+}
+.usuario_chat-flex #reac-ntf{
+    margin-left: 5px;
+}
+
+.usuario_chat:hover div.modal-header{
+    display: block;
+}
+
+.usuario_chat .nome-usuario{
+    margin: 0;
+}
+.usuario_chat-flex{
+    display:flex;
+    width: 100%; 
+}
+.usuario_chat-flex .body-conversa_usuario{
+    width: 100%; 
+    /* padding: 0px 10px; */
+}
+.usuario_chat span{
+    font-size: 10pt;
+}
+.usuario_chat{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+    border-top: 1px solid #161616;
+    border-bottom: 1px solid #161616;
+}
+.usuario_chat #tag_usuario
+{
+    font-size: 8pt;
+}
+.usuario_chat #tag_usuario{
+    color: gray;
+    
+}
+.avatar-timeline_home{
+    width: 55px;
+    height: 55px;
+    display: block;
+    margin: 0px auto;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+.nome-usuario{
+    width: 100%;
+    margin-left: 10px;
+}
+.nome-usuario span {
+    margin-left: 10px;
+}
+
+.ultima-mensagem p, .ultima-mensagem span{
+    color: white;
+}
+.ultima-mensagem{
+    display: flex;justify-content: space-between;
+    padding: 0;
+    max-width: 100%;
+}
+.ultima-mensagem div{
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+}
+.ultima-mensagem div p{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 9pt;   
+}
+
+.ultima-mensagem span{
+    font-size: 20px; 
+    font-weight: bold; 
+}
+
+.usuario_chat #testeee{
+    font-size: 35px; 
+    font-weight: bold;
+    margin-right: 10px;
+    
+}

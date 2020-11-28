@@ -2,9 +2,9 @@
 namespace _api\Classes;
 Class Atualiza_perfilDao{
 
-    public function update(Usuario $p){
+    public function updateFoto(Usuario $p){
 
-        $sql = 'UPDATE tb_usuario SET nome = ?, email = ?, senha = ?, foto = ? WHERE idusuario = ?';
+        $sql = 'UPDATE usuario SET Nome = ?, Email = ?, Senha = ?, Foto = ? WHERE idUsuario = ?';
     
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
@@ -17,20 +17,18 @@ Class Atualiza_perfilDao{
     
     
     }
-    
-    public function read() {
-    
-        $sql = 'SELECT * FROM produtos';
+
+    public function update(Usuario $p){
+
+        $sql = 'UPDATE usuario SET Nome = ?, Email = ?, Senha = ? WHERE idUsuario = ?';
     
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->execute();
+        $stmt->bindValue(1, $p->getNome());
+        $stmt->bindValue(2, $p->getEmail());
+        $stmt->bindValue(3, $p->getSenha());
+        $stmt->bindValue(4, $p->getId());
     
-        if($stmt->rowCount() > 0):
-            $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            return $resultado;
-        else:
-            return [];
-        endif;
+        $stmt->execute();
     
     
     }
