@@ -12,7 +12,10 @@ foreach($usuarioDao->read($user) as $usuario):
     $nome = $usuario['Nome'];
     $email = $usuario['Email'];
 endforeach;
-
+$fila11 = "";
+$fila21 = "";
+$fila31 = "";
+$fila41 = "";
 if(isset($_SESSION['fila_11'])){
 
     if($_SESSION['fila_11'] == TRUE)
@@ -167,7 +170,7 @@ if(isset($_SESSION['idusuario']))	//verifica se sessao foi setada
                                 <div class="dropdown-menu header_dropdowns">
                                     <a class="dropdown-item header_dropdowns" href="index_fila.php">Página inicial</a>
                                     <a class="dropdown-item header_dropdowns" href="editar_perfil.php">Editar perfil</a>
-                                    <a class="dropdown-item header_dropdowns" href="calendario.php">Calendário</a>
+                                    <a class="dropdown-item header_dropdowns" href="calendario/index.php">Calendário</a>
                                     <a class="dropdown-item header_dropdowns" href="#"></a>
                                     <a class="dropdown-item header_dropdowns" href="" data-toggle="modal" data-target="#modal_sair">sair da conta</a>  
                                 </div>
@@ -525,7 +528,7 @@ if(isset($_SESSION['idusuario']))	//verifica se sessao foi setada
                                     campeonato de videogame ou checar quando haverá ginástica laboral na
                                     sede. Encontre seus amigos e divirta-se! </h6>
                                 <div>
-                                    <a href="calendario.php" type="button" class="btn button_fila" id="caledario_acesso" alt="button para acessar tela do calendario">Acessar aqui</a>
+                                    <a href="calendario/index.php" type="button" class="btn button_fila" id="caledario_acesso" alt="button para acessar tela do calendario">Acessar aqui</a>
                                 </div>
                             </div>      
                         </div>

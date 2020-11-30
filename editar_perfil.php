@@ -64,7 +64,7 @@ endforeach;
                         <div class="dropdown-menu header_dropdowns">
                             <a class="dropdown-item header_dropdowns" href="index_fila.php">Página inicial</a>
                             <a class="dropdown-item header_dropdowns" href="editar_perfil.php">Editar perfil</a>
-                            <a class="dropdown-item header_dropdowns" href="calendario.php">Calendário</a>
+                            <a class="dropdown-item header_dropdowns" href="calendario/index.php">Calendário</a>
                             <a class="dropdown-item header_dropdowns" href="#"></a>
                             <a class="dropdown-item header_dropdowns" href="" data-toggle="modal" data-target="#modal_sair">sair da conta</a> 
                         </div>

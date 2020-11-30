@@ -1,0 +1,968 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.header{
+    background: linear-gradient(180deg, rgba(254, 85, 23, 0.8) 31.25%, rgba(254, 102, 46, 0.4) 91.15%),
+    linear-gradient(0deg, #FE662E, #FE662E);
+    width: auto;
+    height: 170px;
+}
+
+#img_logo{
+    position: absolute;
+    width: auto;
+    height: auto;
+    margin-left:20%; 
+}
+
+#header_nome{
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top:70px;
+    
+}
+.dropdowns_btn{
+    width: auto;
+    height: auto;
+    color: #fff;
+    padding-top:80px;
+    float: right;
+}
+
+.header_dropdowns{
+    background: #fff;
+    color: #FE5517;
+    margin-top: 0;
+}
+
+img#perfil{
+    position: relative;
+    width: 132.49px;
+    height: 133.63px;
+    border-radius: 50%;
+    margin-left: 120px;
+    margin-top: -110px;
+     
+    }  
+
+.button{
+    background-color: #6263AB;
+    color: #fff;
+    text-decoration:none;
+    height: 48px;
+    width: 173px;
+    border-radius: 4px;
+    text-align: center; 
+    padding: 12px 0 0 0;
+    margin-right: 23.24px;
+}
+.button:hover{
+    background-color: #36357E;
+    color: #fff;
+    text-decoration: none;
+    height: 48px;
+    width: 173px;
+    border-radius: 4px;
+}
+
+H1{
+    font-family:'Montserrat', sans-serif bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+}
+
+H2{
+    font-size: 48px;
+    color: #fff;
+    font-family:'Montserrat', sans-serif bold;
+    font-weight: bold;
+}
+
+H3{
+    
+    font-family: 'Montserrat', sans-serif bold;
+    font-size: 40px;
+    font-style: bold;
+    font-weight: 700;
+    line-height: 49px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+H4{
+    font-family:'Montserrat', sans-serif bold;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+}
+h5{
+    font-family: 'Montserrat', sans-serif bold;
+    font-style: bold;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+h6{
+    font-family: 'Montserrat', sans-serif bold;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000;    
+} 
+.texto_fila{
+    margin: 5% 0 3% 1%;  
+} 
+
+#texto_fila_a{
+    padding-top: 1%;
+    
+}
+.cor_prin_01_texto{
+    color: #36357E;
+
+}
+.cor_prin_02_texto{
+    color: #FE5517;
+}
+.cor_prin_02_conteudo{
+    background: #FE5517;
+}
+
+.cor_braco{
+   color: #fff;
+}
+.cor_preta{
+    color: #000;
+ }
+
+.espaco_grid{
+    margin: 0 8% 0 8%;
+}
+
+.card_fila{
+    width: 100%;
+    height: auto;
+    background: #D4D4D4;
+    border-radius: 20px;
+}
+.card_fila_dentro{
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #30306A 7.29%, rgba(65, 64, 124, 0.9) 60.94%), #41407C;
+    border-radius: 20px;
+}
+.card_olho_icone{
+    margin: -80px 0 0 60px;
+}
+.card_img{
+    width: 180px;
+    height: 230px;  
+    border-radius: 20px;
+    margin-top: 8px;
+    margin-left:8px;
+    position: absolute;
+}
+.card_detalhe_icone{
+    padding: 0 0 0 86.6px;
+    margin: -23px -10px 0 0;
+    }
+
+.card_titulo{
+    margin: -4% 0 0 -10%;    
+}
+#card_subtitulo{
+    padding:0 0 0 45px;
+    margin: 0 0 0 0;
+}
+
+.card_numero_fila{
+    padding-left: 34%;
+    padding-top: 4%;
+    padding-bottom: 2.5%;
+}
+
+.card_conteudo_fila{
+    margin-top: -30%;
+    margin-left: 26%; 
+}
+
+.card_button{
+    padding-left: 15%;
+    padding-right: 9%;
+    padding-top: 9%;
+}
+
+.button_sair_da_fila{
+    background-color: Transparent;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 4px;
+    text-align: center; 
+    height: 10%;
+    width: 110%; 
+    font-family: 'Montserrat', sans-serif bold;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+}
+.button_sair_da_fila:hover{
+    background-color: #FE5517;
+    color:#fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+
+}
+.card_detalhe_icone{
+    padding: 0 0 0 86.6px;
+    margin: -7% -10px 0 0;
+    }
+.card_detalhe_texto{
+        margin: -63px 0 -5% 42%;
+        text-decoration: underline ;
+        color: #000;       
+    }
+.card_detalhe_texto_ativo{
+    margin: -63px 0 -5% 42%;
+    text-decoration: underline ;
+    color: #fff;       
+}
+.card_modaldetalhe{
+    padding: 0 50px 0 0;
+    margin: 50px 0 -30px 0;
+}
+
+#detalhe_texto{
+    font-size: 13px;
+    margin-top: -10px;
+}
+
+.button_fila{
+    background-color: #4F4E9C;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 4px;
+    text-align: center; 
+    height: 10%;
+    width: 110%; 
+    font-family: 'Montserrat', sans-serif bold;;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1px;
+}
+.button_fila:hover{
+    background-color: #36357E;
+    color: #fff;
+}
+
+
+.calendario{
+    padding: 7% 0 7% 0;
+}
+
+.calendario_conteudo a {
+    color: #FE5517;
+}
+#titulo_calen{
+    color: #FE5517;
+    padding-top: 22%;
+}
+#calen_texto{
+    padding-top: 3%;
+    text-align: left;
+}
+.calen_button{
+    width: 50%;
+    height: 10%;
+    margin-left: 25%;
+}
+.calendario_img img{
+    position: relative;
+    width: 92%;
+    height: 92%;
+}
+#caledario_acesso{
+    float: left;
+    width: 50%;
+    height: 15%;
+    margin-top: 7%;
+}
+
+
+.modal_sair_fila_button{
+    width: 140px;
+    height: auto;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.cor_header_card{
+    background-color: #FE5517;
+    border-radius: 40px 40px 0 0;
+}
+.cor_header_card_1{
+    background-color: #fff;
+    border-radius: 40px 40px 0 0;
+}
+
+
+
+
+
+
+footer{
+    background-color: #332F2F;
+    height: auto;
+    width: auto;
+    padding: 4.5% 0 0 0;
+}
+
+#footer_texto{
+    color:#fff;
+    font-size: 16px;
+}
+.footer_centro{
+    text-align: center;
+}
+
+
+.cormodal{
+    background: #36357e;
+    color: #fff;
+}
+
+.cormodal_1{
+    background: #fff;
+    color: #000;
+}
+
+
+.modal_tamanho_cor{
+    background: #36357e;
+    color: #fff;
+    width: 416px;
+    height: 297px;
+}
+
+.modal_tamanho_cor_sair{
+    background: #36357e;
+    color: #fff;
+    width: 416px;
+    height: 200px;
+}
+
+.modal_fila_numero{
+    padding-left: 30%;
+}
+.modal_fila_texto{
+    padding-left: 30%;
+    margin-top: -24%;
+    margin-bottom: 9%;
+}
+.modal_fila_espaco{
+    margin-top: 6%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.modal_tamanho_botao{
+    height: 9%;
+    width: 50%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.modal_tamanho_botao1{
+    height: 9%;
+    width: 50%;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.modal_header{
+    background-image: url("../img/fila/fila_videogame.jpg");
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+    border-radius: 48px 48px 0 0 ;
+    position:absolute;
+}
+.modal_detalhe_img{
+    position: relative;
+    border-radius: 50%;
+    width: 35%;
+    height: 35%;
+}
+.modal_icone_close{
+    position: absolute;
+    margin-left: -9%;
+}
+.modal_detalhe_ul{
+    padding-left: 20%;
+}
+.modal_espaco_img{
+    padding-right: 30%;
+}
+.modal_salvar_fila_logo{
+    padding-left: 150px;
+}
+
+.modal_salvar_fila_img{
+    padding-top: 100px;
+
+}
+
+.modal_salvar_fila_texto{
+    padding-top:50px;
+    letter-spacing: 1px;
+}
+
+.modal_salvar_fila_numero{
+    padding-left: 50px;
+    padding-top: 25px;
+}
+
+.modal_salvar_fila_footer{
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.modal_erro_img{
+    margin-top: 20px;
+    padding-left: 140px;
+}
+
+.modal_erro_texto{
+    text-align: center;
+    color: #fff;
+    margin-top: 25px;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#img_perfil_usuario{
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    margin-top: 15%;
+}
+
+
+.button_alterar_foto{
+    color: #FE5517; 
+    padding-left: 70px;
+    text-align: center;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+.button_alterar_foto:hover{
+    color: #FE5517; 
+    padding-left: 70px;
+    text-align: center;
+    text-decoration-line: underline;
+}
+#titulo_editar_perfil{
+    margin-top: 19%;
+    color:#FE5517;
+    padding-bottom: 8%;
+    text-align: left;
+}
+
+#subtitulo_espaco{
+    color:#FE5517;
+    text-align: left;
+    padding-bottom: 7%;
+}
+#div_email{
+    padding-top: 63.5%;
+}
+#div_repetir_senha{
+    padding-top: 45%;
+}
+#button_CANCELAR{
+    margin-right:40px;
+    color:#FE5517;
+    margin-top:30px;
+    margin-bottom: 50px;
+
+}
+.button_salvar{
+    background-color: #FE5517;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    width: auto;
+    height: auto;
+    
+}
+.button_salvar:hover{
+    background-color: #B93200;
+    color: #fff;   
+}
+.button_salvar_modal{
+    background-color: #FE5517;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 4px;
+    text-align: center;
+
+}
+.posicao_button_salvar_modal{
+    margin-top: 43px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    width: 150px;
+    height: 40px;
+
+}
+
+.button_salvar_modal:hover{
+    background-color: #B93200;
+    color: #fff;
+    /* text-decoration:none;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 43px;
+    margin-left: 10px;
+    width: 150px;
+    height: 40px; */
+}
+
+
+
+
+
+
+
+.button_salvar:hover{
+    background-color: #B93200;
+    color: #fff;   
+}
+
+
+
+.modal_titulo{
+    text-align: left;
+    margin-top: 32px;
+    margin-left: 21px;
+}
+
+.topnav {
+    width: 100%;
+    height: 512px;
+    background: linear-gradient(180deg, rgba(254, 85, 23, 0.374) 15.1%, 
+    rgba(254, 102, 46, 0.0825) 46.35%), rgba(254, 102, 46, 0.75);
+    background-image: url("../img/home/videogame control.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+.button-login {
+    color: white;
+}
+
+.button-login:hover {
+    color: white;
+}
+
+#h1-topnav {
+    position: absolute;
+    width: 400px;
+    height: 153.05px;
+    left: 96px;
+    top: 230px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+}
+
+#p-topnav {
+    position: absolute;
+    width: 400px;
+    height: 93.31px;
+    left: 99px;
+    top: 330px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+#p-topnav a {
+    color: white;
+    font-weight: bold;
+}
+
+#h3-fila-tempo-real {
+    color: #FE5517;
+    height: 49px;
+    left: 100px;
+}
+
+#h5-fila-tempo-real {
+    width: 660px;
+    color: #121225;
+    text-align: left;
+    height: 126.12px;
+}
+
+#h5-fila-tempo-real a {
+    color: #FE5517;
+}
+
+#img-card1 {
+    height: 158.4px;
+    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.img-cards-index{
+    height: 100%;
+    border-radius: 20px 20px 0 0px;
+    margin: 5px;
+}
+
+.cards-retangle {
+    background: #D4D4D4;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 20px 20px 20px 20px;
+    width: 238px;
+    height: 340px;
+    margin: 0 10px;
+}
+
+.card-details {
+    text-align: center;
+    margin: 50px 0 0 0;
+}
+
+.card-details a {
+    color: #000;
+}
+
+.card-icon {
+    float: left;
+    margin: 0 0 0 30px;
+}
+
+.quantidade-pessoas-fila {
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 68px;
+    padding: 0 0 0 10px;
+}
+
+.card-titulo-index {
+    margin: 15px 0 0 10px;
+    font-size: 23px;
+}
+
+.card-desc-index {
+    margin: 0 0 0 12px;
+    font-size: 14px;
+}
+
+.card-body-index {
+    width: 238px;
+}
+
+.row {
+    justify-content: center;
+}
+
+.img-cards-index-exp {
+    width: 238px;
+    height: 160px;
+}
+
+#container-fluid-padding {
+    padding-top: 100px;
+}
+
+.session_mobile{
+    background: #FE885C;
+    height: 500px;
+}
+
+#imgHome {
+    width: 100%;
+}
+
+#h3-session-mobile {
+    position: absolute;
+    width: 602.48px;
+    left: 630.52px;
+    color: #2A2962;
+    margin: -50px;
+}
+
+#h5-session-mobile {
+    position: absolute;
+    width: 598.48px;
+    left: 632.52px;
+    margin: 120px 0 0 -50px;
+    color: #121225;
+    text-align: left;
+}
+
+.button-modal {
+    background-color: #4F4E9C;
+    color: #fff;
+    text-decoration:none;
+    height: 48px;
+    width: 173px;
+    border-radius: 4px;
+    text-align: center; 
+    margin-right: 23.24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 576px) { 
+    /* Pagina Editar perfil */
+    .espaco_grid{
+        margin: 0 20px 0 20px;
+    }
+    #img_perfil_usuario{
+        width: 189.21px;
+        height: 189.21px;
+        margin-left: 45px;
+        margin-top: 187.79px;
+    }
+    .button_alterar_foto{
+        width: 72px;
+        height: 16px;
+        margin-left: 13px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color:#B93200;
+        text-decoration-line: underline;
+
+    }
+    #titulo_editar_perfil{
+        margin-top: -255px;
+        margin-bottom: 245px;
+        color:#FE5517;
+        padding-bottom: 8%;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #subtitulo_espaco{
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    #div_email{
+        padding-top:26px;
+        padding-bottom: 38.69px;
+    }
+    #div_repetir_senha{
+        padding-top:0;  
+    }
+    .aliamento_button{
+        margin-left:0;
+    }
+    .modal_tamanho_cor{
+        border-radius: 0;
+        width: 335px;
+        height: 228.8px;
+    }
+    .modal_titulo{
+        font-family:'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: left;
+        margin-top: 30px;
+        margin-left: 21px;
+    }
+
+    #modal_texto_h7{
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        margin-top: 3px;
+        margin-bottom: 0;
+        margin-left: -11px;
+    }
+    .button_salvar{
+        border-radius: 4px;
+        text-align: center;
+        margin:44px 71px 44px 71px;
+        width: 235px;
+        height: 40px;
+        background-color: #4F4E9C;
+    }
+    .button_salvar:hover{
+        background-color: #4F4E9C;
+    }
+
+    .button_salvar_modal{
+        background-color: #FE5517;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+        width: 132px;
+        height: 40px;
+        margin-top: 40px;
+       
+    }
+
+    /* Pagina index_fila */
+    .card_fila{
+        width: 332px;
+        height: 192px;
+    }
+    .card_img{
+        width: 115.58px;
+        height: 176px;
+        left: 8px;
+        top: 8px;
+        border-radius: 20px 20px 20px 20px;
+        position: absolute;
+    }
+    .card_titulo{
+        width: 157.59px;
+        height: 50.13px; 
+        margin-left: 190.68px;
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 21px;
+        color: #000;
+        
+    }
+    #card_subtitulo{
+        text-align: left;
+        left: 43.54%;
+        right: 9.53%;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: normal;
+        margin-top: -30px;
+    }
+    
+    .card_numero_fila{
+        left: 58.8%;
+        margin-right: 29.95%;
+        margin-top: -16%;
+        bottom: 50.28%;
+        margin-left: 60px;
+        font-size: 10px;
+    }
+    .card_conteudo_fila{
+        margin-top: -90px;
+        margin-left: 50px; 
+        font-family: 'Montserrat', sans-serif bold;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        width: 10%;
+
+    }
+
+    
+    .card_button{
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .card_detalhe_icone{
+        padding: 0 0 0 0x;
+        margin: 0 0 0 0;
+        }
+
+    .card_detalhe_texto{
+        margin: 0 0 0 0;
+        text-decoration: underline ;
+        color: #000;   
+    }
+
+ }
+
+ .card-pessoas-fila {
+     text-align: center;
+     color: #36357E;
+ }
+
+ .logo img {
+    margin: 0 0 0 80px;
+ }
