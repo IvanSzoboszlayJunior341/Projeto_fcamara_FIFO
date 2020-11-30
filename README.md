@@ -21,8 +21,14 @@ composer require dompdf/dompdf
 ```
 
 ## Banco de Dados:
-create database banco_fcamara;
+Isntalar um servidor apache no computador, por exemplo: Xampp ou Wampserver. Caso o servidor tenha alguma senha, alterar as seguintes páginas dentro do codigo:
 
+- _api\Classes\conexao.php
+- calendario\conexao.php
+- calendario\relatorio.php
+
+-- -----------------------------------------------------
+create database banco_fcamara;
 use banco_fcamara;
 -- -----------------------------------------------------
 -- Table Usuario
