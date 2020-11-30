@@ -5,7 +5,7 @@ Class UsuarioDao
 {
     public function read(Usuario $p){
 
-        $sql = 'SELECT * From tb_usuario WHERE idusuario = ?';
+        $sql = 'SELECT * From usuario WHERE idUsuario = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getId());

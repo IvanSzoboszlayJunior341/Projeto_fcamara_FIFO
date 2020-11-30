@@ -1,7 +1,7 @@
 <?php
 namespace _api\Classes;
 class Fila{
-    private $id, $hora, $status, $usuario, $equipamento;
+    private $id, $hora, $usuario, $equipamento, $jogo;
 
     public function getId(){
         return $this->id;
@@ -19,14 +19,6 @@ class Fila{
         $this->hora = $hora;
     }
 
-    public function getStatus(){
-        return $this->status;
-    }
-
-    public function setStatus($status){
-        $this->status = $status;
-    }
-
     public function getUsuario(){
         return $this->usuario;
     }
@@ -41,6 +33,14 @@ class Fila{
 
     public function setEquipamento($equipamento){
         $this->equipamento = $equipamento;
+    }
+
+    public function getJogo(){
+        return $this->jogo;
+    }
+
+    public function setJogo($jogo){
+        $this->jogo = $jogo;
     }
 }
 ?>

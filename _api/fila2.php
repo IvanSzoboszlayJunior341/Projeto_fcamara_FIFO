@@ -8,4 +8,5 @@
     $cont = $cont + 1; 
     endforeach;
 ?>
-<p class="numero_fila"><?php echo $cont; ?></p>
+<span class="quantidade-pessoas-fila"><?php echo $cont; ?></span>
+<span style="font-size: 10px">JOGADORES NA FILA</span>

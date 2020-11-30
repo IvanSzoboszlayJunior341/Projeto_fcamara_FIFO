@@ -5,7 +5,7 @@ Class LoginDao
 {
     public function read(Usuario $p){
 
-        $sql = 'SELECT * From tb_usuario WHERE email = ?';
+        $sql = 'SELECT * From usuario WHERE Email = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getEmail());

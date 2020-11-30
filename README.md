@@ -2,7 +2,7 @@
 **Hackathon Programa de Formação a Distância - 2ª edição 2020**
 
 ## Problemática:
-Sempre é bom relaxar entre uma tarefa e outra. Para isso, dentro da **FC Santos** temos como se fosse uma área de recreação, onde nossos consultores podem relaxar enquanto jogam Fifa no Playstation ou uma partida de sinuca. Isso ajuda a descansar a mente, além de criar uma relação com os colegas **#SangueLaranja**.
+Sempre é bom relaxar entre uma tarefa e outra. Para isso, dentro da **FC Santos** temos como se fosse uma área de recreação, onde nossos consultores podem relaxar enquanto jogam Fifa no Playstation ou uma partida de sinuca. Isso ajuda a descansar a mente, além de criar uma relação com os colegas **#SangueLaranja**🧡.
 Mas por algo mais descontraído, não é muito organizado. Às vezes demora para alguém jogar, já que temos em torno de mais de 90 colaboradores só da **FC Santos**. Isso acaba acarretando em uma fila, feita apenas no boca a boca, deixando de fora algumas pessoas que não conseguiram jogar no dia.
 
 ## Qual a solução que queremos?

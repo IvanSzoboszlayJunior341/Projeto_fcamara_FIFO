@@ -4,22 +4,79 @@ Class FilaDao{
 
     public function create(Fila $p) {	
 		
-        $sql = 'INSERT INTO tb_fila(hora, status, fk_usuario, fk_equipamento) VALUES (?,?,?,?)';
+        $sql = 'INSERT INTO fila (Hora, Jogo, Usuario_idUsuario, Equipamento_idequipamento) VALUES (?,?,?,?)';
 
 		$stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getHora());
-        $stmt->bindValue(2, $p->getStatus());
+        $stmt->bindValue(2, $p->getJogo());
         $stmt->bindValue(3, $p->getUsuario());
         $stmt->bindValue(4, $p->getEquipamento());
 		$stmt->execute();
 
     }
     
-    public function read() {
+    public function read1() {
 
-		$sql = 'SELECT `tb_fila`.*, `tb_usuario`.*
-        FROM `tb_fila` 
-            LEFT JOIN `tb_usuario` ON `tb_fila`.`fk_usuario` = `tb_usuario`.`idusuario`';
+		$sql = 'SELECT `fila`.*, `usuario`.*
+        FROM `fila` 
+            LEFT JOIN `usuario` ON `fila`.`Usuario_idUsuario` = `usuario`.`idUsuario` where Equipamento_idequipamento = 1';
+
+		$stmt = Conexao::getConn()->prepare($sql);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+			return $resultado;
+		else:
+			return [];
+		endif;
+
+
+	}
+
+	public function read2() {
+
+		$sql = 'SELECT `fila`.*, `usuario`.*
+        FROM `fila` 
+            LEFT JOIN `usuario` ON `fila`.`Usuario_idUsuario` = `usuario`.`idUsuario` where Equipamento_idequipamento = 2';
+
+		$stmt = Conexao::getConn()->prepare($sql);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+			return $resultado;
+		else:
+			return [];
+		endif;
+
+
+	}
+
+	public function read3() {
+
+		$sql = 'SELECT `fila`.*, `usuario`.*
+        FROM `fila` 
+            LEFT JOIN `usuario` ON `fila`.`Usuario_idUsuario` = `usuario`.`idUsuario` where Equipamento_idequipamento = 3';
+
+		$stmt = Conexao::getConn()->prepare($sql);
+		$stmt->execute();
+
+		if($stmt->rowCount() > 0):
+			$resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+			return $resultado;
+		else:
+			return [];
+		endif;
+
+
+	}
+
+	public function read4() {
+
+		$sql = 'SELECT `fila`.*, `usuario`.*
+        FROM `fila` 
+            LEFT JOIN `usuario` ON `fila`.`Usuario_idUsuario` = `usuario`.`idUsuario` where Equipamento_idequipamento = 4 ';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->execute();
@@ -36,7 +93,7 @@ Class FilaDao{
 
 	public function delete(Fila $p) {
 
-		$sql = 'DELETE FROM tb_fila WHERE fk_usuario = ? and fk_equipamento = ?';
+		$sql = 'DELETE FROM fila WHERE Usuario_idUsuario = ? and Equipamento_idequipamento = ?';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->bindValue(1, $p->getUsuario());
@@ -47,7 +104,7 @@ Class FilaDao{
 
 	public function read_dentro(Fila $p){
 
-		$sql = 'SELECT * FROM tb_fila where fk_usuario = ? && fk_equipamento = ?';
+		$sql = 'SELECT * FROM fila where Usuario_idUsuario = ? && Equipamento_idequipamento = ?';
             
 
 		$stmt = Conexao::getConn()->prepare($sql);
@@ -69,7 +126,7 @@ Class FilaDao{
 	public function readFila1() {
 
 		$sql = 'SELECT *
-        FROM `tb_fila` where fk_equipamento = 1';
+        FROM `fila` where Equipamento_idequipamento = 1';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->execute();
@@ -87,7 +144,7 @@ Class FilaDao{
 	public function readFila2() {
 
 		$sql = 'SELECT *
-        FROM `tb_fila` where fk_equipamento = 2';
+        FROM `fila` where Equipamento_idequipamento = 2';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->execute();
@@ -105,7 +162,7 @@ Class FilaDao{
 	public function readFila3() {
 
 		$sql = 'SELECT *
-        FROM `tb_fila` where fk_equipamento = 3';
+        FROM `fila` where Equipamento_idequipamento = 3';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->execute();
@@ -123,7 +180,7 @@ Class FilaDao{
 	public function readFila4() {
 
 		$sql = 'SELECT *
-        FROM `tb_fila` where fk_equipamento = 4';
+        FROM `fila` where Equipamento_idequipamento = 4';
 
 		$stmt = Conexao::getConn()->prepare($sql);
 		$stmt->execute();

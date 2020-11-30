@@ -1,31 +1,80 @@
-<?php include('../_api/conexao.php');
-include('../_api/funcao_editar_perfil.php');
-@session_start();
-?>
-<!DOCTYPE html>
-<html lang="pt_br">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title><?php echo $titulo_pagina; ?></title>
-  <!-- Custom fonts for this template-->
-  <link href="../_vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="../_css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FIFO - Fcamara</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <?php if(isset($_GET['idPerfil'])){ $idclicado = $_GET['idPerfil'];}?>
 </head>
-<body id="page-top">
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-<?php include('sidebar.php');?>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-<?php include('navbar.php');?>
-      <!-- Main Content -->
-      <div id="content">
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+
+<header class="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="index_fila.php" >
+                    <div class="logo">
+                        <img src="img/LOGO_BRANCA.png" id="img_logo" alt="FIFO Logo">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+            <div class="btn-group dropdowns_btn  ">
+                        <button type="button" class="btn dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/Vector.png">
+                        </button>
+
+                        <div class="dropdown-menu header_dropdowns">
+                            <a class="dropdown-item header_dropdowns" href="index_fila.php">Página inicial</a>
+                            <a class="dropdown-item header_dropdowns" href="editar_perfil.php">Editar perfil</a>
+                            <a class="dropdown-item header_dropdowns" href="calendario.php">Calendário</a>
+                            <a class="dropdown-item header_dropdowns" href="#"></a>
+                            <a class="dropdown-item header_dropdowns" href="index.php">sair da conta</a>  
+                        </div>
+
+                    </div> 
+            </div>
+            <div class="col-md-4 ">
+                    <div class="te4">
+  
+                    <div >
+                        <h6 id="header_nome" >Olá, MARCOS. <br>Bem vindo(a)</h6>
+                    </div>
+
+                    <div>
+                        <img src="img/teste.png" id="perfil" alt="FIFO Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
