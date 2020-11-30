@@ -11,8 +11,16 @@ Para melhorar a experiência de jogo e maior convivência com os consultores, ti
 ## Links:
 - Protótipo WEB
 - Protótipo Mobile
-- Banco de dados
 
+## Biblioteca:
+
+Instalação com [Composer](https://getcomposer.org/), última versão.
+
+```bash
+composer require dompdf/dompdf
+```
+
+## Banco de Dados:
 create database banco_fcamara;
 
 use banco_fcamara;
@@ -61,6 +69,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `start` datetime DEFAULT NULL,
   `end` datetime DEFAULT NULL,
   PRIMARY KEY (`id`))
+  
+  -- -----------------------------------------------------
 
 ## Colaboradores:
 
