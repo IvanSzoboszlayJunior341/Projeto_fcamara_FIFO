@@ -517,7 +517,7 @@ section.banner {
 
 section.featured-places {
 
-    padding-bottom: 80px;
+    /* padding-bottom: 80px; */
 
 }
 
@@ -900,7 +900,7 @@ section.contact .section-heading {
 
 
 footer {
-    margin-top: 80px;
+    /* margin-top: 80px; */
     padding: 80px 0px 70px 0px;
     border-top: 1px solid #ddd;
 }
@@ -1107,7 +1107,7 @@ svg {
 }
 */
 .modal-content {
-    background: #c2c2c2 linear-gradient(to top, #c2c2c2 5%, #dbdbdb 100%);
+    background: white;
     border-radius: 50px;
     width: 400px;
     margin: 0 auto;

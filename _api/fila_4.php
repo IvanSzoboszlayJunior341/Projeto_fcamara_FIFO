@@ -3,10 +3,13 @@
     $filaDao = new \_api\Classes\FilaDao();
     $filaDao->readFila3();
     $cont = 0;
-    foreach($filaDao->readFila3() as $filas):
+    foreach($filaDao->readFila4() as $filas):
                         
     $cont = $cont + 1; 
     endforeach;
 ?>
-<span class="quantidade-pessoas-fila"><?php echo $cont; ?></span>
-<span style="font-size: 10px">JOGADORES NA FILA</span>
+<H1><span><?php echo $cont; ?></span></H1>
+<div class="card_conteudo_fila">
+    <span>Jogador</span>  <br>      
+    <span >na fila</span><br>
+</div

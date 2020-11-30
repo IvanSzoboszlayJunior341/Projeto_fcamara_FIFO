@@ -1,12 +1,14 @@
 <?php
     require __DIR__ . "/../vendor/autoload.php";
+    session_start();
     $filaDao = new \_api\Classes\FilaDao();
-    $filaDao->readFila2();
+    $filaDao->read2();
     $cont = 0;
-    foreach($filaDao->readFila2() as $filas):
-                        
-    $cont = $cont + 1; 
-    endforeach;
-    $cont = $cont + 1;
-?>
-<p class="numero_fila"><?php echo $cont; ?></p>
+    foreach($filaDao->read2() as $filas):
+        $cont = $cont + 1; 
+        if($_SESSION['idusuario'] == $filas["idUsuario"] ){?>
+        
+            <H4 class="cor_braco modal_salvar_fila_texto">Você entrou<br> na fila na<br> posição:</H4>
+            <H1 class="modal_salvar_fila_numero"><?php echo  $cont; ?></H1>
+     <?php }
+    endforeach; ?>

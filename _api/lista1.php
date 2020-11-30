@@ -5,20 +5,13 @@
     $cont = 0;
     foreach($filaDao->read1() as $filas):
     $cont = $cont + 1; ?>
-                <div class="usuario_chat">
-                    <div class="usuario_chat-flex">
-                    <span id="testeee"><?php echo $cont ?></span> 
-                        <?php echo "<img src='img/".$filas["Foto"]. "' alt='' class='avatar-timeline_home'>"; ?>
-                                            
-                        <div class="body-conversa_usuario">                  
-                            <div class="nome-usuario">
-                                <span><?php echo $filas["Nome"]; ?></span>
-                            </div> 
-                            <div class="ultima-mensagem">
-                                <div> <p>JOGO: <?php echo $filas["Jogo"]?></p>  </div> 
-                            </div>  
-                        </div> 
-                    </div>                                                
-                </div>
+    <ul class="modal_detalhe_ul" >
+        <li class="modal_espaco_img">
+            <?php echo "<img src='img/".$filas["Foto"]. "' alt='Foto Usuario' class='modal_detalhe_img'>"; ?>
+        </li>
+        <li class="modal_fila_texto ">
+            <h6 class="cor_preta"><br><b> <?php echo $filas["Nome"]; ?></b><br> Jogo: <?php echo $filas["Jogo"]?> </h6>
+        </li>
+    </ul>
     <?php endforeach;
 ?>

@@ -1,7 +1,7 @@
 <?php
 namespace _api\Classes;
 class Usuario{
-    private $id, $email, $senha, $nome, $apelido, $imagem;
+    private $id, $email, $senha, $nome, $apelido, $imagem, $emailc;
 
     public function getId(){
         return $this->id;
@@ -17,6 +17,14 @@ class Usuario{
 
     public function setEmail($email){
         $this->email = $email;
+    }
+
+    public function getEmailc(){
+        return $this->emailc;
+    }
+
+    public function setEmailc($emailc){
+        $this->emailc = $emailc;
     }
 
     public function getSenha(){

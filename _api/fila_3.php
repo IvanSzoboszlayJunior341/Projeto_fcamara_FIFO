@@ -1,12 +1,15 @@
 <?php
     require __DIR__ . "/../vendor/autoload.php";
     $filaDao = new \_api\Classes\FilaDao();
-    $filaDao->readFila2();
+    $filaDao->readFila3();
     $cont = 0;
     foreach($filaDao->readFila2() as $filas):
                         
     $cont = $cont + 1; 
     endforeach;
 ?>
-<span class="quantidade-pessoas-fila"><?php echo $cont; ?></span>
-<span style="font-size: 10px">JOGADORES NA FILA</span>
+<H1><span><?php echo $cont; ?></span></H1>
+<div class="card_conteudo_fila">
+    <span>Jogador</span>  <br>      
+    <span >na fila</span><br>
+</div
