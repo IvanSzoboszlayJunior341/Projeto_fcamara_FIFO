@@ -21,7 +21,7 @@ composer require dompdf/dompdf
 ```
 
 ## Banco de Dados:
-Isntalar um servidor apache no computador, por exemplo: Xampp ou Wampserver. Caso o servidor tenha alguma senha, alterar as seguintes páginas dentro do codigo:
+Instalar um servidor apache no computador, por exemplo: Xampp ou Wampserver. Caso o servidor tenha alguma senha, alterar as seguintes páginas dentro do codigo:
 
 - _api\Classes\conexao.php
 - calendario\conexao.php
